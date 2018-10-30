@@ -10,9 +10,30 @@ import UIKit
 
 class QuestionViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    private var cellItem: TableItem?;
+    
+    func setItem(_ item : TableItem){
+        self.cellItem = item;
+        if ( titleLabel == nil){
+            updateView();
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        updateView()
+    }
+    
+    func updateView(){
+        if let cell = cellItem {
+            titleLabel.text = cell.title
+            print(cell.data)
+        }else{
+            titleLabel.text = ""
+        }
+        
+      
     }
 
     override func didReceiveMemoryWarning() {

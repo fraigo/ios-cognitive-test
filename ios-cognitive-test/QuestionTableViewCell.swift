@@ -20,7 +20,12 @@ class QuestionTableViewCell: UITableViewCell {
     }
     
     override func willMove(toWindow newWindow: UIWindow?) {
-        numberLabel.text = cellItem.position
+        if let cell = cellItem{
+            print(cell.position);
+            numberLabel.text = "\(cell.position)"
+            questionLabel.text = cell.title
+        }
+        
         
     }
 
@@ -28,11 +33,7 @@ class QuestionTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-        if (selected){
-            self.backgroundColor = UIColor.white
-        }else{
-            self.backgroundColor = UIColor.lightGray
-        }
+        
         
     }
 
