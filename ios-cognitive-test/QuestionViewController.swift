@@ -11,11 +11,17 @@ import UIKit
 class QuestionViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var optionLabel1: CogView!
+    @IBOutlet weak var optionLabel2: CogView!
+    @IBOutlet weak var optionLabel3: CogView!
+    @IBOutlet weak var optionLabel4: CogView!
+    //@IBOutlet weak var questionData: UILabel!
     private var cellItem: TableItem?;
     
     func setItem(_ item : TableItem){
         self.cellItem = item;
-        if ( titleLabel == nil){
+        if ( titleLabel != nil){
             updateView();
         }
     }
@@ -28,19 +34,20 @@ class QuestionViewController: UIViewController {
     func updateView(){
         if let cell = cellItem {
             titleLabel.text = cell.title
+            descriptionLabel.text = cell.description
+            //questionData.text = cell.data.descriptionInStringsFileFormat
+            optionLabel1.text = cell.option1
             print(cell.data)
         }else{
             titleLabel.text = ""
+            descriptionLabel.text = ""
+            //questionData.text = ""
         }
+    
         
       
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
 }
 

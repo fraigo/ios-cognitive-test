@@ -17,6 +17,8 @@
 		0B5726B421880A4000845F0C /* QuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5726B321880A4000845F0C /* QuestionTableViewController.swift */; };
 		0B5726B621880B2300845F0C /* TableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5726B521880B2300845F0C /* TableItem.swift */; };
 		0B5726B821880C9F00845F0C /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B5726B721880C9F00845F0C /* questions.json */; };
+		0BA0E465218950A30083FF70 /* ToDo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0BA0E464218950A30083FF70 /* ToDo.txt */; };
+		0BA0E467218952C10083FF70 /* CogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0E466218952C10083FF70 /* CogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		0B5726B321880A4000845F0C /* QuestionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewController.swift; sourceTree = "<group>"; };
 		0B5726B521880B2300845F0C /* TableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableItem.swift; sourceTree = "<group>"; };
 		0B5726B721880C9F00845F0C /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
+		0BA0E464218950A30083FF70 /* ToDo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
+		0BA0E466218952C10083FF70 /* CogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,7 @@
 		0B5726902188064700845F0C = {
 			isa = PBXGroup;
 			children = (
+				0BA0E464218950A30083FF70 /* ToDo.txt */,
 				0B57269B2188064700845F0C /* ios-cognitive-test */,
 				0B57269A2188064700845F0C /* Products */,
 			);
@@ -75,6 +80,7 @@
 				0B5726B321880A4000845F0C /* QuestionTableViewController.swift */,
 				0B5726B521880B2300845F0C /* TableItem.swift */,
 				0B5726B721880C9F00845F0C /* questions.json */,
+				0BA0E466218952C10083FF70 /* CogView.swift */,
 			);
 			path = "ios-cognitive-test";
 			sourceTree = "<group>";
@@ -137,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BA0E465218950A30083FF70 /* ToDo.txt in Resources */,
 				0B5726AA2188064D00845F0C /* LaunchScreen.storyboard in Resources */,
 				0B5726B821880C9F00845F0C /* questions.json in Resources */,
 				0B5726A72188064D00845F0C /* Assets.xcassets in Resources */,
@@ -153,6 +160,7 @@
 			files = (
 				0B5726A52188064800845F0C /* ios_cognitive_test.xcdatamodeld in Sources */,
 				0B5726B621880B2300845F0C /* TableItem.swift in Sources */,
+				0BA0E467218952C10083FF70 /* CogView.swift in Sources */,
 				0B5726B2218807A400845F0C /* QuestionTableViewCell.swift in Sources */,
 				0B5726B421880A4000845F0C /* QuestionTableViewController.swift in Sources */,
 				0B57269F2188064800845F0C /* QuestionViewController.swift in Sources */,

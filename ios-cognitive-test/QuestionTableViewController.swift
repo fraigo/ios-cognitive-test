@@ -13,12 +13,14 @@ class QuestionTableViewController: UITableViewController {
     @IBOutlet weak var questionTableView: UITableView!
     
     var tableData: [TableItem] = [TableItem]()
+    var currentPosition = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         questionTableView.dataSource = self
         questionTableView.delegate = self
         navigationItem.leftBarButtonItem = editButtonItem
+        getJsonFromUrl()
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -28,7 +30,7 @@ class QuestionTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        getJsonFromUrl()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,11 +67,15 @@ class QuestionTableViewController: UITableViewController {
         
     }
     
+    func appendItems(items : NSArray){
+        for item in items {
+            self.tableData.append(TableItem(item as! NSDictionary))
+        }
+    }
+    
     func parseArray(data: Data){
         if let jsonArray = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSArray {
-            for item in jsonArray {
-                self.tableData.append(TableItem(item as! NSDictionary))
-            }
+            appendItems(items: jsonArray)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 self.questionTableView.reloadData()
             }
@@ -82,9 +88,7 @@ class QuestionTableViewController: UITableViewController {
             let descriptor: NSSortDescriptor = NSSortDescriptor(key: key, ascending: false)
             if let itemArray = jsonObj!.value(forKey: items) as? NSArray {
                 let sortedResults: NSArray = itemArray.sortedArray(using: [descriptor]) as NSArray
-                for item in sortedResults {
-                    self.tableData.append(TableItem(item as! NSDictionary))
-                }
+                appendItems(items: sortedResults)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     self.questionTableView.reloadData()
                 }
@@ -92,7 +96,15 @@ class QuestionTableViewController: UITableViewController {
         }
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        let cell = sender as! QuestionTableViewCell
+        let data = cell.cellItem
+        let titleView = segue.destination as! QuestionViewController
+        titleView.setItem(data!)
+        
+    }
     
     
 }
@@ -127,7 +139,7 @@ extension QuestionTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(tableData[indexPath.row].data);
-        
+        currentPosition = indexPath.row
     }
     
     

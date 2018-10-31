@@ -25,24 +25,104 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4b-eY-aAA">
+                                <rect key="frame" x="0.0" y="84" width="768" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fJ-Tm-cH5">
+                                <rect key="frame" x="276.5" y="124.5" width="215" height="215"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezS-is-LfQ" customClass="CogView" customModule="ios_cognitive_test" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.93464621113989632" green="0.93464621113989632" blue="0.93464621113989632" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="rs9-Ft-BAK"/>
+                                            <constraint firstAttribute="height" constant="100" id="sXS-SL-JGl"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYi-tt-kxN" customClass="CogView" customModule="ios_cognitive_test" customModuleProvider="target">
+                                        <rect key="frame" x="110" y="5" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.93464621110000001" green="0.93464621110000001" blue="0.93464621110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="ccz-7O-oaL"/>
+                                            <constraint firstAttribute="height" constant="100" id="rmX-zC-idD"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEA-RB-ltY" customClass="CogView" customModule="ios_cognitive_test" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="110" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.93464621110000001" green="0.93464621110000001" blue="0.93464621110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="5t3-Kk-XhG"/>
+                                            <constraint firstAttribute="width" constant="100" id="WGc-Uy-vPG"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urb-HP-Eyh" customClass="CogView" customModule="ios_cognitive_test" customModuleProvider="target">
+                                        <rect key="frame" x="110" y="110" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.93464621110000001" green="0.93464621110000001" blue="0.93464621110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="GBJ-a7-5ik"/>
+                                            <constraint firstAttribute="height" constant="100" id="yzV-NY-F0r"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="mEA-RB-ltY" secondAttribute="bottom" constant="5" id="2M9-mS-YVG"/>
+                                    <constraint firstAttribute="bottom" secondItem="urb-HP-Eyh" secondAttribute="bottom" constant="5" id="9Oz-B3-9ki"/>
+                                    <constraint firstItem="ezS-is-LfQ" firstAttribute="leading" secondItem="9fJ-Tm-cH5" secondAttribute="leading" constant="5" id="CGf-kB-75C"/>
+                                    <constraint firstItem="ezS-is-LfQ" firstAttribute="top" secondItem="9fJ-Tm-cH5" secondAttribute="top" constant="5" id="Cez-vo-rZm"/>
+                                    <constraint firstItem="tYi-tt-kxN" firstAttribute="top" secondItem="9fJ-Tm-cH5" secondAttribute="top" constant="5" id="FvO-J3-EKz"/>
+                                    <constraint firstAttribute="height" constant="215" id="GLM-5D-Vle"/>
+                                    <constraint firstItem="urb-HP-Eyh" firstAttribute="top" secondItem="tYi-tt-kxN" secondAttribute="bottom" constant="5" id="Him-fG-XkW"/>
+                                    <constraint firstAttribute="trailing" secondItem="tYi-tt-kxN" secondAttribute="trailing" constant="5" id="QCA-75-FB8"/>
+                                    <constraint firstItem="tYi-tt-kxN" firstAttribute="leading" secondItem="ezS-is-LfQ" secondAttribute="trailing" constant="5" id="VcZ-Qd-JIA"/>
+                                    <constraint firstItem="mEA-RB-ltY" firstAttribute="leading" secondItem="9fJ-Tm-cH5" secondAttribute="leading" constant="5" id="Wun-6x-Efu"/>
+                                    <constraint firstItem="mEA-RB-ltY" firstAttribute="top" secondItem="ezS-is-LfQ" secondAttribute="bottom" constant="5" id="etP-cO-N4w"/>
+                                    <constraint firstAttribute="trailing" secondItem="urb-HP-Eyh" secondAttribute="trailing" constant="5" id="fdb-vY-X15"/>
+                                    <constraint firstItem="urb-HP-Eyh" firstAttribute="leading" secondItem="mEA-RB-ltY" secondAttribute="trailing" constant="5" id="iYD-J5-rgo"/>
+                                    <constraint firstAttribute="width" constant="215" id="w5I-2j-s8x"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k18-RV-Dnv" customClass="CogView" customModule="ios_cognitive_test" customModuleProvider="target">
+                                <rect key="frame" x="334" y="369.5" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.93464621110000001" green="0.93464621110000001" blue="0.93464621110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="KMz-nh-M9X"/>
+                                    <constraint firstAttribute="height" constant="100" id="Xw0-Bc-kXE"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Y4b-eY-aAA" firstAttribute="top" secondItem="SGl-tj-2m8" secondAttribute="bottom" constant="8" id="06N-lI-Yie"/>
+                            <constraint firstItem="9Uj-L0-Uh0" firstAttribute="trailing" secondItem="Y4b-eY-aAA" secondAttribute="trailing" id="AM2-ef-u68"/>
+                            <constraint firstItem="Y4b-eY-aAA" firstAttribute="leading" secondItem="9Uj-L0-Uh0" secondAttribute="leading" id="E1U-kh-DuT"/>
                             <constraint firstItem="9Uj-L0-Uh0" firstAttribute="trailing" secondItem="SGl-tj-2m8" secondAttribute="trailing" constant="10" id="Ge3-Ll-Pet"/>
+                            <constraint firstItem="k18-RV-Dnv" firstAttribute="centerX" secondItem="O3E-RT-XXo" secondAttribute="centerX" id="dbH-mA-hSP"/>
                             <constraint firstItem="SGl-tj-2m8" firstAttribute="top" secondItem="9Uj-L0-Uh0" secondAttribute="top" constant="20" id="hDO-cW-zQT"/>
+                            <constraint firstItem="k18-RV-Dnv" firstAttribute="top" secondItem="9fJ-Tm-cH5" secondAttribute="bottom" constant="30" id="lXu-VL-GfG"/>
                             <constraint firstItem="SGl-tj-2m8" firstAttribute="leading" secondItem="9Uj-L0-Uh0" secondAttribute="leading" constant="10" id="p6V-mg-6mw"/>
+                            <constraint firstItem="9fJ-Tm-cH5" firstAttribute="top" secondItem="Y4b-eY-aAA" secondAttribute="bottom" constant="20" id="riL-e1-Oix"/>
+                            <constraint firstItem="9fJ-Tm-cH5" firstAttribute="centerX" secondItem="O3E-RT-XXo" secondAttribute="centerX" id="w7W-14-S9T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Uj-L0-Uh0"/>
                     </view>
                     <connections>
+                        <outlet property="descriptionLabel" destination="Y4b-eY-aAA" id="l4T-ap-3n5"/>
+                        <outlet property="optionLabel1" destination="ezS-is-LfQ" id="n5F-nF-o12"/>
+                        <outlet property="optionLabel2" destination="tYi-tt-kxN" id="7e6-l0-fny"/>
+                        <outlet property="optionLabel3" destination="mEA-RB-ltY" id="u2v-Dn-Cbj"/>
+                        <outlet property="optionLabel4" destination="urb-HP-Eyh" id="NPx-kt-bw8"/>
                         <outlet property="titleLabel" destination="SGl-tj-2m8" id="K1v-2A-T9S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QXo-PW-LcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="132"/>
+            <point key="canvasLocation" x="136.71875" y="131.8359375"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Question List-->
         <scene sceneID="XP6-KR-g3O">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="UCP-vo-w4g" customClass="QuestionTableViewController" customModule="ios_cognitive_test" customModuleProvider="target" sceneMemberID="viewController">
@@ -85,6 +165,7 @@
                                 <connections>
                                     <outlet property="numberLabel" destination="m1w-zm-Tsd" id="U7e-3d-oO5"/>
                                     <outlet property="questionLabel" destination="RXb-r3-cK9" id="OaA-B1-4EQ"/>
+                                    <segue destination="h7e-Rg-fu2" kind="showDetail" id="Vr1-Ru-rNv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -93,7 +174,7 @@
                             <outlet property="delegate" destination="UCP-vo-w4g" id="aoV-dK-5pP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="8aF-6x-bQS"/>
+                    <navigationItem key="navigationItem" title="Question List" id="8aF-6x-bQS"/>
                     <connections>
                         <outlet property="questionTableView" destination="4kk-WA-85w" id="gL0-U0-n7g"/>
                     </connections>
@@ -132,4 +213,7 @@
             <point key="canvasLocation" x="-815" y="-201"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Vr1-Ru-rNv"/>
+    </inferredMetricsTieBreakers>
 </document>
