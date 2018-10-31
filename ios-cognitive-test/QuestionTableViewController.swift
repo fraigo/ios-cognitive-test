@@ -21,6 +21,7 @@ class QuestionTableViewController: UITableViewController {
         questionTableView.delegate = self
         //navigationItem.leftBarButtonItem = editButtonItem
         //getJsonFromUrl()
+        getJsonFromFile();
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -30,7 +31,7 @@ class QuestionTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        getJsonFromFile();
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -112,9 +113,9 @@ class QuestionTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let cell = sender as! QuestionTableViewCell
-        let titleView = segue.destination as! QuestionViewController
-        titleView.setItem(cell)
+        let viewCell = sender as! QuestionTableViewCell
+        let questionView = segue.destination as! QuestionViewController
+        questionView.setItem(viewCell, item: &viewCell.cellItem!)
     }
     
     

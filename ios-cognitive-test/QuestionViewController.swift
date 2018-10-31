@@ -24,9 +24,9 @@ class QuestionViewController: UIViewController {
     private var cell: QuestionTableViewCell?
     private var answer: String = ""
     
-    func setItem(_ item : QuestionTableViewCell){
-        self.cellItem = item.cellItem;
-        self.cell = item
+    func setItem(_ cell : QuestionTableViewCell, item: inout TableItem ){
+        self.cellItem = item
+        self.cell = cell
         if ( titleLabel != nil){
             updateView();
         }
@@ -48,9 +48,20 @@ class QuestionViewController: UIViewController {
     }
     
     func updateView(){
+        let optionLabels = [
+            optionLabel1,
+            optionLabel2,
+            optionLabel3,
+            optionLabel4
+        ]
+        let answerLabels = [
+            answerLabel1,
+            answerLabel2,
+            answerLabel3,
+            answerLabel4!
+        ]
+        
         if let cell = cellItem {
-            titleLabel.text = cell.title
-            descriptionLabel.text = cell.description
             
             var options = [
                 cell.option1,
@@ -65,18 +76,12 @@ class QuestionViewController: UIViewController {
                 cell.answer4
             ]
             
+            
+            titleLabel.text = cell.title
+            descriptionLabel.text = cell.description
             answer = cell.result
             
-            optionLabel1.content = options[0]
-            optionLabel2.content = options[1]
-            optionLabel3.content = options[2]
-            optionLabel4.content = options[3]
-            
-            answerLabel1.content = answers[0]
-            answerLabel2.content = answers[1]
-            answerLabel3.content = answers[2]
-            answerLabel4.content = answers[3]
-            
+            // detect type
             var type : CogView.CogType = .Plain
             if (cell.type == "digit"){
                 type = .Digit
@@ -84,14 +89,24 @@ class QuestionViewController: UIViewController {
             if (cell.type == "arrow"){
                 type = .Arrow
             }
-            optionLabel1.type = type
-            optionLabel2.type = type
-            optionLabel3.type = type
-            optionLabel4.type = type
-            answerLabel1.type = type
-            answerLabel2.type = type
-            answerLabel3.type = type
-            answerLabel4.type = type
+            
+            for index in 0...3 {
+                if let label = optionLabels[index]{
+                    label.content = options[index]
+                    label.type = type
+                }
+            }
+            
+            for index in 0...3 {
+                if let label = answerLabels[index]{
+                    label.content = answers[index]
+                    label.type = type
+                    label.tag = index
+                    if (cellItem?.selectedItem == index){
+                        label.backgroundColor = UIColor.yellow
+                    }
+                }
+            }
             
         }else{
             titleLabel.text = ""
@@ -113,18 +128,25 @@ extension QuestionViewController : UIGestureRecognizerDelegate{
             let view = gestureRecognizer.view as! CogView
             view.press()
             view.backgroundColor = UIColor.yellow
-            if (view.content == cellItem?.answer1){
-                cell?.backgroundColor = UIColor.lightGray
-                cellItem?.state = 1
+            if (view.content == cellItem?.result){
+                cell!.cellItem?.state = 1
             }else{
-                cellItem?.state = 2
+                cell!.cellItem?.state = 2
             }
+            cell?.backgroundColor = UIColor.lightGray
+            cell!.cellItem!.selectedItem = view.tag
             //cell?.isUserInteractionEnabled = false
-            if let FirstViewController = self.navigationController?.viewControllers.first {
-                self.navigationController?.popToViewController(FirstViewController, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+                self.back()
             }
         }
         return true
+    }
+    
+    func back(){
+        if let FirstViewController = self.navigationController?.viewControllers.first {
+            self.navigationController?.popToViewController(FirstViewController, animated: true)
+        }
     }
     
 }

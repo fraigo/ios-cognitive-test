@@ -50,7 +50,8 @@ struct TableItem {
         type = item.value(forKey: "type") as! String
         position = pos
         data = item
+        print(item)
         state = 0
-        selectedItem = 0
+        selectedItem = -1
     }
 }

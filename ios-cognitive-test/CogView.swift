@@ -13,8 +13,8 @@ import UIKit
 @IBDesignable
 class CogView: UIView {
     
-    var NUMBERS = "0️⃣,1️⃣,2️⃣,3️⃣,4️⃣,5️⃣,6️⃣,7️⃣,8️⃣,9️⃣"
-    var ARROWS = "0️⃣,1️⃣,2️⃣,3️⃣,4️⃣,5️⃣,6️⃣,7️⃣,8️⃣,9️⃣"
+    var DIGITS = "0️⃣,1️⃣,2️⃣,3️⃣,4️⃣,5️⃣,6️⃣,7️⃣,8️⃣,9️⃣"
+    var ARROWS = "🔼,▶️,🔽,◀️"
     
     enum CogType {
         case Plain
@@ -59,7 +59,7 @@ class CogView: UIView {
     func translateContent() -> String{
         if (type == .Digit){
             var tmp = String(content)
-            var numbers = NUMBERS.split(separator: ",")
+            var numbers = DIGITS.split(separator: ",")
             for number in (0...9){
                 tmp = tmp.replacingOccurrences(of:String(number) , with: numbers[number])
             }
