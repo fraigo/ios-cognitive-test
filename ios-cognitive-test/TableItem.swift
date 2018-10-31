@@ -21,13 +21,11 @@ struct TableItem {
     var answer2 : String
     var answer3 : String
     var answer4 : String
+    var type : String
     
-    var result : String
-    
-    init(_ item: NSDictionary) {
+    init(_ item: NSDictionary, pos: Int) {
         title = item.value(forKey: "title") as! String
         description = item.value(forKey: "description") as! String
-        position = item.value(forKey: "position") as! Int
         option1 = item.value(forKey: "option1") as! String
         option2 = item.value(forKey: "option2") as! String
         option3 = item.value(forKey: "option3") as! String
@@ -36,9 +34,8 @@ struct TableItem {
         answer2 = item.value(forKey: "answer2") as! String
         answer3 = item.value(forKey: "answer3") as! String
         answer4 = item.value(forKey: "answer4") as! String
-        result = item.value(forKey: "result") as! String
-        
-        
+        type = item.value(forKey: "type") as! String
+        position = pos
         data = item
     }
 }

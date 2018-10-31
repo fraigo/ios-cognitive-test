@@ -8,8 +8,19 @@
 
 import UIKit
 
+
+
 @IBDesignable
 class CogView: UIView {
+    
+    var NUMBERS = "0️⃣,1️⃣,2️⃣,3️⃣,4️⃣,5️⃣,6️⃣,7️⃣,8️⃣,9️⃣"
+    var ARROWS = "0️⃣,1️⃣,2️⃣,3️⃣,4️⃣,5️⃣,6️⃣,7️⃣,8️⃣,9️⃣"
+    
+    enum CogType {
+        case Plain
+        case Digit
+        case Arrow
+    }
 
     @IBInspectable
     var content : String = "" {
@@ -18,24 +29,66 @@ class CogView: UIView {
         }
     }
     
-    var type = 0
+    var type : CogType = .Plain
     var labels = [UILabel]()
     
     override func didMoveToWindow() {
-        let lines = content.split(separator: ",")
-        var startY : CGFloat = 4.0
+        let translated = translateContent()
+        let lines = translated.split(separator: ",")
+        let fontSize = (self.frame.width)/4
+        let lineHeight = fontSize + 4
+        var startY : CGFloat = ( self.frame.height - lineHeight * CGFloat(lines.count) ) / 2.0
         labels = [UILabel]()
         if (labels.count == 0) {
             for line in lines {
-                let label = UILabel(frame:CGRect(x: 0, y: startY, width: self.frame.width, height: (self.frame.width)/4));
+                let label = UILabel(frame:CGRect(x: 0, y: startY, width: self.frame.width, height: lineHeight));
                 label.textAlignment = .center
                 label.text = String(line)
-                label.font = UIFont.systemFont(ofSize: (self.frame.width)/4)
+                label.font = UIFont.systemFont(ofSize: fontSize)
                 addSubview(label)
                 labels.append(label)
-                startY += (self.frame.width)/4 + 4
+                startY += lineHeight
             }
         }
+    }
+    
+    func translateContent() -> String{
+        if (type == .Digit){
+            var tmp = String(content)
+            var numbers = NUMBERS.split(separator: ",")
+            for number in (0...9){
+                tmp = tmp.replacingOccurrences(of:String(number) , with: numbers[number])
+            }
+            return tmp;
+        }
+        if (type == .Arrow){
+            var tmp = String(content)
+            var arrows = ARROWS.split(separator: ",")
+            for number in (0...3){
+                tmp = tmp.replacingOccurrences(of:String(number) , with: arrows[number])
+            }
+            return tmp;
+        }
+        return content;
+    }
+    
+    func press(){
+        let currentFont = labels[0].font
+        UIView.animate(withDuration: 0.3, animations: {
+            self.bounds.origin.x = -1
+            self.bounds.origin.y = -1
+            for label in self.labels{
+                label.font = label.font.withSize(13)
+            }
+        }, completion:{ (finished: Bool) in
+            UIView.animate(withDuration: 0.3, animations: {
+                self.bounds.origin.x = 0
+                self.bounds.origin.y = 0
+                for label in self.labels{
+                    label.font = currentFont
+                }
+            })
+        })
     }
     
     

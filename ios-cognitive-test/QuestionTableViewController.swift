@@ -20,7 +20,7 @@ class QuestionTableViewController: UITableViewController {
         questionTableView.dataSource = self
         questionTableView.delegate = self
         navigationItem.leftBarButtonItem = editButtonItem
-        getJsonFromUrl()
+        //getJsonFromUrl()
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -30,7 +30,7 @@ class QuestionTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        getJsonFromFile();
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,10 +38,21 @@ class QuestionTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func getJsonFromFile(){
+        do {
+            if let filepath = Bundle.main.path(forResource: "questions", ofType: "json") {
+                let contents = try String(contentsOfFile: filepath)
+                self.parseArray(data: contents.data(using: .utf8)!)
+            }
+        } catch {
+            // contents could not be loaded
+            print("Error ")
+        }
+    }
     
     func getJsonFromUrl(){
         //creating a NSURL
-        let dataURL : String = "https://fraigo.github.io/ios-cognitive-test/ios-cognitive-test/questions.json"
+        let dataURL : String = "https://raw.githubusercontent.com/fraigo/ios-cognitive-test/master/ios-cognitive-test/questions.json"
         let url = NSURL(string: dataURL)
         
         //fetching the data from the url
@@ -68,8 +79,9 @@ class QuestionTableViewController: UITableViewController {
     }
     
     func appendItems(items : NSArray){
+        tableData.removeAll()
         for item in items {
-            self.tableData.append(TableItem(item as! NSDictionary))
+            self.tableData.append(TableItem(item as! NSDictionary, pos: tableData.count+1))
         }
     }
     
@@ -79,7 +91,8 @@ class QuestionTableViewController: UITableViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 self.questionTableView.reloadData()
             }
-            
+        }else{
+            print("Error trying to parse JSON")
         }
     }
     
@@ -138,7 +151,6 @@ extension QuestionTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(tableData[indexPath.row].data);
         currentPosition = indexPath.row
     }
     

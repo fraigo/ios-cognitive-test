@@ -21,20 +21,14 @@ class QuestionTableViewCell: UITableViewCell {
     
     override func willMove(toWindow newWindow: UIWindow?) {
         if let cell = cellItem{
-            print(cell.position);
             numberLabel.text = "\(cell.position)"
             questionLabel.text = cell.title
         }
-        
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-        
-        
+      // Configure the view for the selected state
     }
 
 }
