@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xIv-Z4-bW7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xIv-Z4-bW7">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -86,7 +85,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fG3-Qk-1rQ">
-                                <rect key="frame" x="277" y="369.5" width="215" height="215"/>
+                                <rect key="frame" x="276.5" y="369.5" width="215" height="215"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AvA-fy-SoU" customClass="CogView" customModule="ios_cognitive_test" customModuleProvider="target">
                                         <rect key="frame" x="5" y="5" width="100" height="100"/>
@@ -156,6 +155,10 @@
                         <viewLayoutGuide key="safeArea" id="9Uj-L0-Uh0"/>
                     </view>
                     <connections>
+                        <outlet property="answerLabel1" destination="AvA-fy-SoU" id="iDQ-t2-Yew"/>
+                        <outlet property="answerLabel2" destination="SIx-3B-jr5" id="ij1-Wl-T8F"/>
+                        <outlet property="answerLabel3" destination="bXC-h8-jYB" id="myY-6a-nx6"/>
+                        <outlet property="answerLabel4" destination="PdD-Hk-BsA" id="VYk-en-bPF"/>
                         <outlet property="descriptionLabel" destination="Y4b-eY-aAA" id="l4T-ap-3n5"/>
                         <outlet property="optionLabel1" destination="ezS-is-LfQ" id="n5F-nF-o12"/>
                         <outlet property="optionLabel2" destination="tYi-tt-kxN" id="7e6-l0-fny"/>
@@ -234,7 +237,7 @@
             <objects>
                 <navigationController id="y6R-Hh-r1M" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Gu-YH-qZM">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

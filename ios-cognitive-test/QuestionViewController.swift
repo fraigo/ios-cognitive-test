@@ -15,6 +15,10 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var optionLabel1: CogView!
     @IBOutlet weak var optionLabel2: CogView!
     @IBOutlet weak var optionLabel3: CogView!
+    @IBOutlet weak var answerLabel1: CogView!
+    @IBOutlet weak var answerLabel2: CogView!
+    @IBOutlet weak var answerLabel3: CogView!
+    @IBOutlet weak var answerLabel4: CogView!
     @IBOutlet weak var optionLabel4: CogView!
     //@IBOutlet weak var questionData: UILabel!
     private var cellItem: TableItem?;
@@ -40,6 +44,10 @@ class QuestionViewController: UIViewController {
             optionLabel2.content = cell.option2
             optionLabel3.content = cell.option3
             optionLabel4.content = cell.option4
+            answerLabel1.content = cell.answer1
+            answerLabel2.content = cell.answer2
+            answerLabel3.content = cell.answer3
+            answerLabel4.content = cell.answer4
             
             print(cell.data)
         }else{

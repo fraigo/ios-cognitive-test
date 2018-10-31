@@ -17,6 +17,11 @@ struct TableItem {
     var option2 : String
     var option3 : String
     var option4 : String
+    var answer1 : String
+    var answer2 : String
+    var answer3 : String
+    var answer4 : String
+    
     var result : String
     
     init(_ item: NSDictionary) {
@@ -27,6 +32,10 @@ struct TableItem {
         option2 = item.value(forKey: "option2") as! String
         option3 = item.value(forKey: "option3") as! String
         option4 = item.value(forKey: "option4") as! String
+        answer1 = item.value(forKey: "answer1") as! String
+        answer2 = item.value(forKey: "answer2") as! String
+        answer3 = item.value(forKey: "answer3") as! String
+        answer4 = item.value(forKey: "answer4") as! String
         result = item.value(forKey: "result") as! String
         
         
