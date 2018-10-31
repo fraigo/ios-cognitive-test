@@ -35,7 +35,11 @@ class CogView: UIView {
     override func didMoveToWindow() {
         let translated = translateContent()
         let lines = translated.split(separator: ",")
-        let fontSize = (self.frame.width)/4
+        var chars = 1
+        if (lines.count>0){
+            chars = lines[0].count
+        }
+        let fontSize = (self.frame.width) / CGFloat(chars+1)
         let lineHeight = fontSize + 4
         var startY : CGFloat = ( self.frame.height - lineHeight * CGFloat(lines.count) ) / 2.0
         labels = [UILabel]()

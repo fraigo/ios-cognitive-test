@@ -12,6 +12,7 @@ class QuestionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     var cellItem: TableItem?;
     
@@ -23,6 +24,7 @@ class QuestionTableViewCell: UITableViewCell {
         if let cell = cellItem{
             numberLabel.text = "\(cell.position)"
             questionLabel.text = cell.title
+            descriptionLabel.text = cell.description
         }
     }
 

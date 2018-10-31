@@ -20,11 +20,13 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerLabel3: CogView!
     @IBOutlet weak var answerLabel4: CogView!
     @IBOutlet weak var optionLabel4: CogView!
-    private var cellItem: TableItem?;
+    private var cellItem: TableItem?
+    private var cell: QuestionTableViewCell?
     private var answer: String = ""
     
-    func setItem(_ item : TableItem){
-        self.cellItem = item;
+    func setItem(_ item : QuestionTableViewCell){
+        self.cellItem = item.cellItem;
+        self.cell = item
         if ( titleLabel != nil){
             updateView();
         }
@@ -49,7 +51,7 @@ class QuestionViewController: UIViewController {
         if let cell = cellItem {
             titleLabel.text = cell.title
             descriptionLabel.text = cell.description
-            //questionData.text = cell.data.descriptionInStringsFileFormat
+            
             var options = [
                 cell.option1,
                 cell.option2,
@@ -62,9 +64,8 @@ class QuestionViewController: UIViewController {
                 cell.answer3,
                 cell.answer4
             ]
-            // shuffle answers
-            answer = cell.answer1
-            answers.shuffle()
+            
+            answer = cell.result
             
             optionLabel1.content = options[0]
             optionLabel2.content = options[1]
@@ -83,21 +84,20 @@ class QuestionViewController: UIViewController {
             if (cell.type == "arrow"){
                 type = .Arrow
             }
-            optionLabel1.type = .Digit
-            optionLabel2.type = .Digit
-            optionLabel3.type = .Digit
-            optionLabel4.type = .Digit
-            answerLabel1.type = .Digit
-            answerLabel2.type = .Digit
-            answerLabel3.type = .Digit
-            answerLabel4.type = .Digit
+            optionLabel1.type = type
+            optionLabel2.type = type
+            optionLabel3.type = type
+            optionLabel4.type = type
+            answerLabel1.type = type
+            answerLabel2.type = type
+            answerLabel3.type = type
+            answerLabel4.type = type
+            
         }else{
             titleLabel.text = ""
             descriptionLabel.text = ""
             //questionData.text = ""
         }
-    
-        
       
     }
 
@@ -108,10 +108,22 @@ class QuestionViewController: UIViewController {
 extension QuestionViewController : UIGestureRecognizerDelegate{
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        print("Touch")
-        let view = gestureRecognizer.view as! CogView
-        print(view.content, cellItem?.answer1)
-        view.press()
+        if (cellItem?.state == 0){
+            print("Touch")
+            let view = gestureRecognizer.view as! CogView
+            view.press()
+            view.backgroundColor = UIColor.yellow
+            if (view.content == cellItem?.answer1){
+                cell?.backgroundColor = UIColor.lightGray
+                cellItem?.state = 1
+            }else{
+                cellItem?.state = 2
+            }
+            //cell?.isUserInteractionEnabled = false
+            if let FirstViewController = self.navigationController?.viewControllers.first {
+                self.navigationController?.popToViewController(FirstViewController, animated: true)
+            }
+        }
         return true
     }
     

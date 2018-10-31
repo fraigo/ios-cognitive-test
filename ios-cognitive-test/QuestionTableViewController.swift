@@ -19,13 +19,13 @@ class QuestionTableViewController: UITableViewController {
         super.viewDidLoad()
         questionTableView.dataSource = self
         questionTableView.delegate = self
-        navigationItem.leftBarButtonItem = editButtonItem
+        //navigationItem.leftBarButtonItem = editButtonItem
         //getJsonFromUrl()
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
-        questionTableView.setEditing(editing, animated: animated)
+        //questionTableView.setEditing(editing, animated: animated)
         
     }
     
@@ -113,10 +113,8 @@ class QuestionTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         let cell = sender as! QuestionTableViewCell
-        let data = cell.cellItem
         let titleView = segue.destination as! QuestionViewController
-        titleView.setItem(data!)
-        
+        titleView.setItem(cell)
     }
     
     
@@ -141,7 +139,7 @@ extension QuestionTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! QuestionTableViewCell
         let item = tableData[indexPath.row]
         cell.setItem(item)
-        cell.showsReorderControl = true
+        //cell.showsReorderControl = true
         
         return cell
     }
@@ -151,7 +149,7 @@ extension QuestionTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        currentPosition = indexPath.row
+        
     }
     
     
