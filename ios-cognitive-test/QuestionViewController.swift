@@ -36,7 +36,11 @@ class QuestionViewController: UIViewController {
             titleLabel.text = cell.title
             descriptionLabel.text = cell.description
             //questionData.text = cell.data.descriptionInStringsFileFormat
-            optionLabel1.text = cell.option1
+            optionLabel1.content = cell.option1
+            optionLabel2.content = cell.option2
+            optionLabel3.content = cell.option3
+            optionLabel4.content = cell.option4
+            
             print(cell.data)
         }else{
             titleLabel.text = ""
