@@ -35,17 +35,17 @@ struct TableItem {
         option4 = item.value(forKey: "option4") as! String
         
         result = item.value(forKey: "answer1") as! String
-        var answers = [
+        var answers : NSArray = [
             item.value(forKey: "answer1") as! String,
             item.value(forKey: "answer2") as! String,
             item.value(forKey: "answer3") as! String,
             item.value(forKey: "answer4") as! String
         ]
-        answers.shuffle()
-        answer1 = answers[0]
-        answer2 = answers[1]
-        answer3 = answers[2]
-        answer4 = answers[3]
+        //answers = answers.shu
+        answer1 = answers[0] as! String
+        answer2 = answers[1] as! String
+        answer3 = answers[2] as! String
+        answer4 = answers[3] as! String
         
         type = item.value(forKey: "type") as! String
         position = pos
@@ -53,5 +53,13 @@ struct TableItem {
         print(item)
         state = 0
         selectedItem = -1
+    }
+}
+
+
+extension NSArray {
+    
+    func shuffleData(){
+        
     }
 }
