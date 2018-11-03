@@ -41,7 +41,7 @@ struct TableItem {
             item.value(forKey: "answer3") as! String,
             item.value(forKey: "answer4") as! String
         ]
-        //answers = answers.shu
+        answers = answers.shuffleData()
         answer1 = answers[0] as! String
         answer2 = answers[1] as! String
         answer3 = answers[2] as! String
@@ -57,9 +57,4 @@ struct TableItem {
 }
 
 
-extension NSArray {
-    
-    func shuffleData(){
-        
-    }
-}
+

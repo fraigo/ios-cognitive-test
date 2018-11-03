@@ -20,6 +20,9 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerLabel3: CogView!
     @IBOutlet weak var answerLabel4: CogView!
     @IBOutlet weak var optionLabel4: CogView!
+    @IBOutlet weak var stack1: UIStackView!
+    @IBOutlet weak var section1: UIView!
+    @IBOutlet weak var section2: UIView!
     private var cellItem: TableItem?
     private var cell: QuestionTableViewCell?
     private var answer: String = ""
@@ -82,20 +85,17 @@ class QuestionViewController: UIViewController {
             answer = cell.result
             
             // detect type
-            var type : CogView.CogType = .Plain
-            if (cell.type == "digit"){
-                type = .Digit
-            }
-            if (cell.type == "arrow"){
-                type = .Arrow
-            }
+            let type = CogType.getType(cell.type)
             
             for index in 0...3 {
                 if let label = optionLabels[index]{
                     label.content = options[index]
                     label.type = type
+                    label.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.8, alpha: 1.0)
                 }
             }
+           
+            section1.isHidden = (type == .Mix1)
             
             for index in 0...3 {
                 if let label = answerLabels[index]{

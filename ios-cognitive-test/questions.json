@@ -1,6 +1,6 @@
 [
     {
-        "title" : "Sequences 1",
+        "title" : "Digit Sequence",
         "description" : "Find the next sequence",
         "type" : "digit",
         "option1" : "2",
@@ -12,8 +12,73 @@
         "answer3" : "4",
         "answer4" : "2"
     },
+     {
+     "title" : "Digit Sequence",
+     "description" : "Find the next sequence",
+     "type" : "digit",
+     "option1" : "1",
+     "option2" : "3",
+     "option3" : "5",
+     "option4" : "?",
+     "answer1" : "7",
+     "answer2" : "6",
+     "answer3" : "5",
+     "answer4" : "1"
+     },
+     {
+     "title" : "Digit Sequence",
+     "description" : "Find the next sequence",
+     "type" : "digit",
+     "option1" : "3",
+     "option2" : "5",
+     "option3" : "7",
+     "option4" : "?",
+     "answer1" : "9",
+     "answer2" : "7",
+     "answer3" : "8",
+     "answer4" : "3"
+     },
+     {
+     "title" : "Digit Sequence",
+     "description" : "Find the next sequence",
+     "type" : "digit",
+     "option1" : "9",
+     "option2" : "7",
+     "option3" : "5",
+     "option4" : "?",
+     "answer1" : "3",
+     "answer2" : "5",
+     "answer3" : "9",
+     "answer4" : "1"
+     },
+     {
+     "title" : "Belongs to",
+     "description" : "What item does not belong?",
+     "type" : "mix",
+     "option1" : "1",
+     "option2" : "2",
+     "option3" : "3",
+     "option4" : "7",
+     "answer1" : "7",
+     "answer2" : "3",
+     "answer3" : "2",
+     "answer4" : "1"
+     },
+     {
+     "title" : "Digit Sequence",
+     "description" : "Find the next sequence",
+     "type" : "digit",
+     "option1" : "8",
+     "option2" : "7",
+     "option3" : "6",
+     "option4" : "?",
+     "answer1" : "5",
+     "answer2" : "7",
+     "answer3" : "8",
+     "answer4" : "0"
+     },
     {
-        "title" : "Sequences 2",
+        "title" : "Number Sequence",
         "description" : "Find the next sequence",
         "type" : "digit",
         "option1" : "35",
@@ -25,8 +90,21 @@
         "answer3" : "71",
         "answer4" : "89"
     },
+     {
+     "title" : "Number Sequence",
+     "description" : "Find the next sequence",
+     "type" : "digit",
+     "option1" : "21",
+     "option2" : "42",
+     "option3" : "63",
+     "option4" : "?",
+     "answer1" : "84",
+     "answer2" : "74",
+     "answer3" : "73",
+     "answer4" : "83"
+     },
     {
-        "title" : "Sequences 3",
+        "title" : "Number Sequence",
         "description" : "Find the next sequence",
         "type" : "digit",
         "option1" : "123",
@@ -39,7 +117,7 @@
         "answer4" : "234"
     },
     {
-        "title" : "Sequences 3x2",
+        "title" : "Double Sequence",
         "description" : "Find the next sequence",
         "type" : "digit",
         "option1" : "122,132",
@@ -52,7 +130,7 @@
         "answer4" : "182,172"
     },
     {
-        "title" : "Sequences 4",
+        "title" : "Arrow Sequence",
         "description" : "Find the next sequence",
         "type" : "arrow",
         "option1" : "0123",
@@ -64,8 +142,21 @@
         "answer3" : "1203",
         "answer4" : "3210"
     },
+     {
+         "title" : "Arrow Sequence",
+         "description" : "Find the next sequence",
+         "type" : "arrow",
+         "option1" : "0101",
+         "option2" : "2121",
+         "option3" : "0101",
+         "option4" : "?",
+         "answer1" : "2121",
+         "answer2" : "2211",
+         "answer3" : "1122",
+         "answer4" : "2112"
+     },
     {
-        "title" : "Sequences 3x3",
+        "title" : "Triple Sequence",
         "description" : "Find the next sequence",
         "type" : "digit",
         "option1" : "123,123,123",
@@ -78,7 +169,7 @@
         "answer4" : "234,234,234"
     },
     {
-        "title" : "Sequences",
+        "title" : "Triple Sequence",
         "description" : "Find the next sequence",
         "type" : "digit",
         "option1" : "123,234,345",

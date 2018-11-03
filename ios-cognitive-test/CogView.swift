@@ -8,30 +8,90 @@
 
 import UIKit
 
+class Sequences {
+    static var DIGITS     = "0️⃣1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣"
+    static var ARROWS     = "🔼▶️🔽◀️"
+    static var FRUITS     = "🍎🍐🍊🍓🍍🍌🍒🍏🍇🍑"
+    static var VEGETABLES = "🥕🥒🥦🍆🥔🌶🌽🥑🍠🍅"
+    static var FLAGS1     = "🇫🇷🇮🇹🇧🇪🇬🇹🇨🇦🇨🇴🇩🇪🇪🇸🇦🇷🇸🇻"
+    static var FLAGS2     = "🇨🇱🇺🇸🇺🇾🇵🇷🇨🇳🇧🇷🇯🇵🇰🇷🇬🇧🇵🇦"
+    
+    static func subset(_ source: String, count: Int) -> String{
+        let shuffled = String(source.shuffle())
+        let index = shuffled.index(shuffled.startIndex, offsetBy: count)
+        return String(shuffled[shuffled.startIndex...index])
+    }
+}
 
+
+enum CogType {
+    case Plain
+    case Digit
+    case Arrow
+    case Fruits
+    case Vegetables
+    case Flags1
+    case Flags2
+    case Mix1
+    
+    static func getSequence(_ type: CogType) -> String{
+        switch type {
+        case .Digit:
+            return Sequences.DIGITS
+        case .Arrow:
+            return Sequences.ARROWS
+        case .Fruits:
+            return Sequences.FRUITS
+        case .Vegetables:
+            return Sequences.VEGETABLES
+        case .Flags1:
+            return Sequences.FLAGS1
+        case .Flags2:
+            return Sequences.FLAGS2
+        case .Mix1:
+            return Sequences.subset(Sequences.FRUITS, count: 5) + Sequences.subset(Sequences.VEGETABLES, count: 5)
+        default:
+            return ""
+        }
+    }
+    
+    static func getType(_ type: String) -> CogType{
+        if (type == "digit"){
+            return .Digit
+        }
+        if (type == "arrow"){
+            return .Arrow
+        }
+        if (type == "fruits"){
+            return .Fruits
+        }
+        if (type == "vegetables"){
+            return .Vegetables
+        }
+        if (type == "flags1"){
+            return .Flags1
+        }
+        if (type == "flags1"){
+            return .Flags2
+        }
+        if (type == "mix"){
+            return .Mix1
+        }
+        return .Plain
+    }
+}
 
 @IBDesignable
 class CogView: UIView {
     
-    var DIGITS     = "0️⃣,1️⃣,2️⃣,3️⃣,4️⃣,5️⃣,6️⃣,7️⃣,8️⃣,9️⃣"
-    var ARROWS     = "🔼,▶️,🔽,◀️"
-    var FRUITS     = "🍏,🍎,🍐,🍊,🍓,🍍,🍌,🍑,🍒,🍇"
-    var VEGETABLES = "🥕,🥒,🥦,🍆,🥔,🌶,🌽,🥑,🍠,🍅"
-    var FLAGS1     = "🇫🇷,🇮🇹,🇧🇪,🇬🇹,🇨🇦,🇨🇴,🇩🇪,🇪🇸,🇦🇷,🇸🇻"
-    var FLAGS2     = "🇨🇱,🇺🇸,🇺🇾,🇵🇷,🇨🇳,🇧🇷,🇯🇵,🇰🇷,🇬🇧,🇵🇦"
     
-    enum CogType {
-        case Plain
-        case Digit
-        case Arrow
-    }
-
     @IBInspectable
     var content : String = "" {
         didSet {
             
         }
     }
+    
     
     var type : CogType = .Plain
     var labels = [UILabel]()
@@ -61,19 +121,12 @@ class CogView: UIView {
     }
     
     func translateContent() -> String{
-        if (type == .Digit){
+        let sequence = CogType.getSequence(type)
+        if (sequence != ""){
             var tmp = String(content)
-            var numbers = DIGITS.split(separator: ",")
-            for number in (0...9){
+            var numbers = sequence.split(separator: ",")
+            for number in (0..<numbers.count){
                 tmp = tmp.replacingOccurrences(of:String(number) , with: numbers[number])
-            }
-            return tmp;
-        }
-        if (type == .Arrow){
-            var tmp = String(content)
-            var arrows = ARROWS.split(separator: ",")
-            for number in (0...3){
-                tmp = tmp.replacingOccurrences(of:String(number) , with: arrows[number])
             }
             return tmp;
         }
