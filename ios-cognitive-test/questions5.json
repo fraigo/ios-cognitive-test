@@ -24,5 +24,57 @@
         "answer2" : "2211",
         "answer3" : "1122",
         "answer4" : "2112"
+    },
+    {
+        "title" : "Arrow Sequence",
+        "description" : "Find the next sequence",
+        "type" : "arrow",
+        "option1" : "0002",
+        "option2" : "0020",
+        "option3" : "0200",
+        "option4" : "?",
+        "answer1" : "2000",
+        "answer2" : "2020",
+        "answer3" : "0002",
+        "answer4" : "3000"
+    },
+    {
+        "title" : "Fruit Sequence",
+        "description" : "Find the next sequence",
+        "type" : "fruits",
+        "option1" : "1234",
+        "option2" : "2341",
+        "option3" : "3412",
+        "option4" : "?",
+        "answer1" : "4123",
+        "answer2" : "1234",
+        "answer3" : "4321",
+        "answer4" : "4312"
     }
+    ,{
+        "title" : "Vegetable Sequence",
+        "description" : "Find the next sequence",
+        "type" : "vegetables",
+        "option1" : "1234",
+        "option2" : "2341",
+        "option3" : "3412",
+        "option4" : "?",
+        "answer1" : "4123",
+        "answer2" : "1234",
+        "answer3" : "4321",
+        "answer4" : "4312"
+    },{
+        "title" : "Flag Sequence",
+        "description" : "Find the next sequence",
+        "type" : "flags",
+        "option1" : "1234",
+        "option2" : "2341",
+        "option3" : "3412",
+        "option4" : "?",
+        "answer1" : "4123",
+        "answer2" : "1234",
+        "answer3" : "4321",
+        "answer4" : "4312"
+    }
+    
 ]
