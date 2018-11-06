@@ -1,0 +1,41 @@
+[
+    {
+        "title" : "Number Sequence",
+        "description" : "Find the next sequence",
+        "type" : "digit",
+        "option1" : "35",
+        "option2" : "26",
+        "option3" : "17",
+        "option4" : "?",
+        "answer1" : "08",
+        "answer2" : "26",
+        "answer3" : "71",
+        "answer4" : "89"
+    },
+    {
+        "title" : "Number Sequence",
+        "description" : "Find the next sequence",
+        "type" : "digit",
+        "option1" : "21",
+        "option2" : "42",
+        "option3" : "63",
+        "option4" : "?",
+        "answer1" : "84",
+        "answer2" : "74",
+        "answer3" : "73",
+        "answer4" : "83"
+    },
+    {
+        "title" : "Number Sequence",
+        "description" : "Find the next sequence",
+        "type" : "digit",
+        "option1" : "123",
+        "option2" : "234",
+        "option3" : "345",
+        "option4" : "?",
+        "answer1" : "456",
+        "answer2" : "123",
+        "answer3" : "567",
+        "answer4" : "234"
+    }
+]

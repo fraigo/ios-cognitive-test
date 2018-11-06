@@ -124,9 +124,11 @@ class CogView: UIView {
         let sequence = CogType.getSequence(type)
         if (sequence != ""){
             var tmp = String(content)
-            var numbers = sequence.split(separator: ",")
-            for number in (0..<numbers.count){
-                tmp = tmp.replacingOccurrences(of:String(number) , with: numbers[number])
+            let chars = sequence.characters
+            var number=0
+            for character in chars{
+                tmp = tmp.replacingOccurrences(of:String(number) , with: String(character))
+                number += 1
             }
             return tmp;
         }
@@ -134,22 +136,7 @@ class CogView: UIView {
     }
     
     func press(){
-        let currentFont = labels[0].font
-        UIView.animate(withDuration: 0.3, animations: {
-            self.bounds.origin.x = -1
-            self.bounds.origin.y = -1
-            for label in self.labels{
-                label.font = label.font.withSize(13)
-            }
-        }, completion:{ (finished: Bool) in
-            UIView.animate(withDuration: 0.3, animations: {
-                self.bounds.origin.x = 0
-                self.bounds.origin.y = 0
-                for label in self.labels{
-                    label.font = currentFont
-                }
-            })
-        })
+        
     }
     
     

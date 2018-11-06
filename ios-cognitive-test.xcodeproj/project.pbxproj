@@ -22,6 +22,11 @@
 		0BE99588218D535700D4059D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE99587218D535700D4059D /* Extensions.swift */; };
 		CE4A74002190CAA800ABB81E /* TableItemCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A73FF2190CAA800ABB81E /* TableItemCollection.swift */; };
 		CE4A74022190DD1600ABB81E /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A74012190DD1600ABB81E /* QuestionCollectionViewCell.swift */; };
+		CE4A74362191356F00ABB81E /* questions1.json in Resources */ = {isa = PBXBuildFile; fileRef = CE4A74352191356F00ABB81E /* questions1.json */; };
+		CE4A74382191378800ABB81E /* questions2.json in Resources */ = {isa = PBXBuildFile; fileRef = CE4A74372191378800ABB81E /* questions2.json */; };
+		CE4A743A219137BB00ABB81E /* questions3.json in Resources */ = {isa = PBXBuildFile; fileRef = CE4A7439219137BB00ABB81E /* questions3.json */; };
+		CE4A743C2191383B00ABB81E /* questions5.json in Resources */ = {isa = PBXBuildFile; fileRef = CE4A743B2191383B00ABB81E /* questions5.json */; };
+		CE4A743E2191389E00ABB81E /* questions4.json in Resources */ = {isa = PBXBuildFile; fileRef = CE4A743D2191389E00ABB81E /* questions4.json */; };
 		CE5C394D21908FAD0062DBFB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C394C21908FAD0062DBFB /* Utils.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +48,11 @@
 		0BE99587218D535700D4059D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CE4A73FF2190CAA800ABB81E /* TableItemCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableItemCollection.swift; sourceTree = "<group>"; };
 		CE4A74012190DD1600ABB81E /* QuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE4A74352191356F00ABB81E /* questions1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions1.json; sourceTree = "<group>"; };
+		CE4A74372191378800ABB81E /* questions2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions2.json; sourceTree = "<group>"; };
+		CE4A7439219137BB00ABB81E /* questions3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions3.json; sourceTree = "<group>"; };
+		CE4A743B2191383B00ABB81E /* questions5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions5.json; sourceTree = "<group>"; };
+		CE4A743D2191389E00ABB81E /* questions4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions4.json; sourceTree = "<group>"; };
 		CE5C394C21908FAD0062DBFB /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,11 +98,16 @@
 				0B5726A32188064800845F0C /* ios_cognitive_test.xcdatamodeld */,
 				0B5726B521880B2300845F0C /* TableItem.swift */,
 				CE4A73FF2190CAA800ABB81E /* TableItemCollection.swift */,
-				0B5726B721880C9F00845F0C /* questions.json */,
 				0BA0E466218952C10083FF70 /* CogView.swift */,
 				0BE99587218D535700D4059D /* Extensions.swift */,
 				CE5C394C21908FAD0062DBFB /* Utils.swift */,
 				CE4A74012190DD1600ABB81E /* QuestionCollectionViewCell.swift */,
+				0B5726B721880C9F00845F0C /* questions.json */,
+				CE4A74352191356F00ABB81E /* questions1.json */,
+				CE4A74372191378800ABB81E /* questions2.json */,
+				CE4A7439219137BB00ABB81E /* questions3.json */,
+				CE4A743D2191389E00ABB81E /* questions4.json */,
+				CE4A743B2191383B00ABB81E /* questions5.json */,
 			);
 			path = "ios-cognitive-test";
 			sourceTree = "<group>";
@@ -156,10 +171,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BA0E465218950A30083FF70 /* ToDo.txt in Resources */,
+				CE4A743C2191383B00ABB81E /* questions5.json in Resources */,
+				CE4A74362191356F00ABB81E /* questions1.json in Resources */,
 				0B5726AA2188064D00845F0C /* LaunchScreen.storyboard in Resources */,
 				0B5726B821880C9F00845F0C /* questions.json in Resources */,
 				0B5726A72188064D00845F0C /* Assets.xcassets in Resources */,
+				CE4A743E2191389E00ABB81E /* questions4.json in Resources */,
+				CE4A743A219137BB00ABB81E /* questions3.json in Resources */,
 				0B5726A22188064800845F0C /* Main.storyboard in Resources */,
+				CE4A74382191378800ABB81E /* questions2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

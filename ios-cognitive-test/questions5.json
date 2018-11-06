@@ -1,0 +1,28 @@
+[
+    {
+        "title" : "Arrow Sequence",
+        "description" : "Find the next sequence",
+        "type" : "arrow",
+        "option1" : "0123",
+        "option2" : "3012",
+        "option3" : "2301",
+        "option4" : "?",
+        "answer1" : "1230",
+        "answer2" : "0123",
+        "answer3" : "1203",
+        "answer4" : "3210"
+    },
+    {
+        "title" : "Arrow Sequence",
+        "description" : "Find the next sequence",
+        "type" : "arrow",
+        "option1" : "0101",
+        "option2" : "2121",
+        "option3" : "0101",
+        "option4" : "?",
+        "answer1" : "2121",
+        "answer2" : "2211",
+        "answer3" : "1122",
+        "answer4" : "2112"
+    }
+]

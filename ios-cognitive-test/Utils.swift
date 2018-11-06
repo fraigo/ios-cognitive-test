@@ -8,15 +8,10 @@
 
 import UIKit
 
-class Utils: NSObject {
 
-}
-
-
-
-func getJsonFromFile() -> NSArray{
+func getJsonFromFile(name: String) -> NSArray{
     do {
-        if let filepath = Bundle.main.path(forResource: "questions", ofType: "json") {
+        if let filepath = Bundle.main.path(forResource: name, ofType: "json") {
             let contents = try String(contentsOfFile: filepath)
             return parseArray(data: contents.data(using: .utf8)!)
         }

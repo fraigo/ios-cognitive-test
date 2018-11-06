@@ -1,0 +1,41 @@
+[
+    {
+        "title" : "Double Sequence",
+        "description" : "Find the next sequence",
+        "type" : "digit",
+        "option1" : "122,132",
+        "option2" : "142,152",
+        "option3" : "162,172",
+        "option4" : "?",
+        "answer1" : "182,192",
+        "answer2" : "172,182",
+        "answer3" : "163,173",
+        "answer4" : "182,172"
+    },
+    {
+        "title" : "Triple Sequence",
+        "description" : "Find the next sequence",
+        "type" : "digit",
+        "option1" : "123,123,123",
+        "option2" : "234,234,234",
+        "option3" : "345,345,345",
+        "option4" : "?",
+        "answer1" : "456,456,456",
+        "answer2" : "123,234,345",
+        "answer3" : "567,567,567",
+        "answer4" : "234,234,234"
+    },
+    {
+        "title" : "Triple Sequence",
+        "description" : "Find the next sequence",
+        "type" : "digit",
+        "option1" : "123,234,345",
+        "option2" : "234,345,456",
+        "option3" : "345,456,567",
+        "option4" : "?",
+        "answer1" : "456,678,789",
+        "answer2" : "123,234,345",
+        "answer3" : "123,456,789",
+        "answer4" : "456,567,678"
+    }
+]

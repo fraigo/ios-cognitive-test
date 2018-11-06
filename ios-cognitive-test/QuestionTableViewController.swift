@@ -35,8 +35,18 @@ class QuestionTableViewController: UITableViewController {
             self.appendItems(items: questions)
         })
         / **/
-        let questions = getJsonFromFile();
         TableItemCollection.setTable(table: questionTableView)
+        let questions = NSMutableArray()
+        let q1 = getJsonFromFile(name: "questions1").shuffleData();
+        questions.addObjects(from: q1.subarray(with: NSRange(location: 0, length: 5 )))
+        let q2 = getJsonFromFile(name: "questions2").shuffleData();
+        questions.addObjects(from: q2.subarray(with: NSRange(location: 0, length: 3 )))
+        let q3 = getJsonFromFile(name: "questions3").shuffleData();
+        questions.addObjects(from: q3.subarray(with: NSRange(location: 0, length: 3 )))
+        let q4 = getJsonFromFile(name: "questions4").shuffleData();
+        questions.addObjects(from: q4.subarray(with: NSRange(location: 0, length: 3 )))
+        let q5 = getJsonFromFile(name: "questions5").shuffleData();
+        questions.addObjects(from: q5.subarray(with: NSRange(location: 0, length: 2 )))
         TableItemCollection.appendItems(items: questions)
     }
     

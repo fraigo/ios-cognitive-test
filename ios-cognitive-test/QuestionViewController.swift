@@ -47,6 +47,7 @@ class QuestionViewController: UIViewController {
         addGesture(answerLabel3)
         addGesture(answerLabel4)
         updateSeconds()
+        
     }
     
     func addGesture(_ label: CogView){
@@ -70,6 +71,8 @@ class QuestionViewController: UIViewController {
             answerLabel4!
         ]
         
+        
+        
         if let item = cellItem {
             
             var options = [
@@ -90,22 +93,23 @@ class QuestionViewController: UIViewController {
             descriptionLabel.text = item.description
             answer = item.result
             
+            
+            
             // detect type
             let type = CogType.getType(item.type)
+            
+            section1.isHidden = (type == .Mix1 || titleLabel.text == "")
+            section2.isHidden = (titleLabel.text == "")
+            
             
             for index in 0...3 {
                 if let label = optionLabels[index]{
                     label.content = options[index]
                     label.type = type
-                    label.frame.origin.x = CGFloat(index * 110) + 10.0
-                    label.frame.origin.y = 10
-                    
                     label.frame.size = CGSize(width: 100, height: 100)
-                    label.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.8, alpha: 1.0)
                 }
             }
            
-            section1.isHidden = (type == .Mix1)
             
             for index in 0...3 {
                 if let label = answerLabels[index]{
@@ -128,20 +132,23 @@ class QuestionViewController: UIViewController {
         }else{
             titleLabel.text = ""
             descriptionLabel.text = ""
-            //questionData.text = ""
+            
+            section1.isHidden = true
+            section2.isHidden = true
+            
+            back()
         }
         
     }
     
     override func viewWillLayoutSubviews() {
-        print("Will Layout \(UIScreen.main.bounds)")
+        // change layout of stackview
         let size = UIScreen.main.bounds
         if (size.width > size.height){
             stackView.axis  = .horizontal
         }else{
             stackView.axis  = .vertical
         }
-        
     }
     
     

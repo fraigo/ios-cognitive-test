@@ -27,6 +27,8 @@ class QuestionTableViewCell: UITableViewCell {
     }
     
     func updateView(){
+        questionLabel.textColor = UIColor.black
+        descriptionLabel.textColor = UIColor.black
         if (numberLabel != nil){
             let item = TableItemCollection.item(position)
             numberLabel.text = "\(item.position)"
@@ -38,6 +40,10 @@ class QuestionTableViewCell: UITableViewCell {
             }
             if (item.state == 2){
                 status = "❌"
+            }
+            if (item.state > 0){
+                questionLabel.textColor = UIColor.gray
+                descriptionLabel.textColor = UIColor.gray
             }
             itemInfo.text = "\(item.seconds) sec.\n\(status)"
         }
