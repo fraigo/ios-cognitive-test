@@ -25,14 +25,15 @@ struct TableItem {
     var type : String
     var state : Int
     var selectedItem : Int
+    var seconds: Int
     
     init(_ item: NSDictionary, pos: Int) {
         title = item.value(forKey: "title") as! String
         description = item.value(forKey: "description") as! String
-        option1 = item.value(forKey: "option1") as! String
-        option2 = item.value(forKey: "option2") as! String
-        option3 = item.value(forKey: "option3") as! String
-        option4 = item.value(forKey: "option4") as! String
+        option1 = item.safeValue(forKey: "option1") as! String
+        option2 = item.safeValue(forKey: "option2") as! String
+        option3 = item.safeValue(forKey: "option3") as! String
+        option4 = item.safeValue(forKey: "option4") as! String
         
         result = item.value(forKey: "answer1") as! String
         var answers : NSArray = [
@@ -52,9 +53,20 @@ struct TableItem {
         data = item
         print(item)
         state = 0
+        seconds = 0
         selectedItem = -1
     }
 }
 
 
 
+extension NSDictionary{
+    
+    func safeValue(forKey: String) -> Any{
+        if let value = self.value(forKey: forKey){
+            return value
+        }else{
+            return ""
+        }
+    }
+}

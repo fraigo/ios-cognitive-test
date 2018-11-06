@@ -86,17 +86,17 @@ class CogView: UIView {
     
     
     @IBInspectable
-    var content : String = "" {
-        didSet {
-            
-        }
-    }
+    var content : String = ""
     
     
     var type : CogType = .Plain
     var labels = [UILabel]()
     
     override func didMoveToWindow() {
+        updateView()
+    }
+    
+    func updateView(){
         let translated = translateContent()
         let lines = translated.split(separator: ",")
         var chars = 1

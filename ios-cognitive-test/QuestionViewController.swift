@@ -20,16 +20,20 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerLabel3: CogView!
     @IBOutlet weak var answerLabel4: CogView!
     @IBOutlet weak var optionLabel4: CogView!
-    @IBOutlet weak var stack1: UIStackView!
     @IBOutlet weak var section1: UIView!
     @IBOutlet weak var section2: UIView!
+    @IBOutlet weak var clockLabel: UILabel!
+    @IBOutlet weak var stackView: UIStackView!
+    
     private var cellItem: TableItem?
     private var cell: QuestionTableViewCell?
+    private var tableView : UITableView?
     private var answer: String = ""
     
-    func setItem(_ cell : QuestionTableViewCell, item: inout TableItem ){
-        self.cellItem = item
+    func setItem(_ cell : QuestionTableViewCell, table: UITableView ){
         self.cell = cell
+        self.cellItem = TableItemCollection.item(cell.position)
+        self.tableView = table
         if ( titleLabel != nil){
             updateView();
         }
@@ -42,6 +46,7 @@ class QuestionViewController: UIViewController {
         addGesture(answerLabel2)
         addGesture(answerLabel3)
         addGesture(answerLabel4)
+        updateSeconds()
     }
     
     func addGesture(_ label: CogView){
@@ -51,6 +56,7 @@ class QuestionViewController: UIViewController {
     }
     
     func updateView(){
+        
         let optionLabels = [
             optionLabel1,
             optionLabel2,
@@ -64,33 +70,37 @@ class QuestionViewController: UIViewController {
             answerLabel4!
         ]
         
-        if let cell = cellItem {
+        if let item = cellItem {
             
             var options = [
-                cell.option1,
-                cell.option2,
-                cell.option3,
-                cell.option4
+                item.option1,
+                item.option2,
+                item.option3,
+                item.option4
             ]
             var answers = [
-                cell.answer1,
-                cell.answer2,
-                cell.answer3,
-                cell.answer4
+                item.answer1,
+                item.answer2,
+                item.answer3,
+                item.answer4
             ]
             
             
-            titleLabel.text = cell.title
-            descriptionLabel.text = cell.description
-            answer = cell.result
+            titleLabel.text = item.title
+            descriptionLabel.text = item.description
+            answer = item.result
             
             // detect type
-            let type = CogType.getType(cell.type)
+            let type = CogType.getType(item.type)
             
             for index in 0...3 {
                 if let label = optionLabels[index]{
                     label.content = options[index]
                     label.type = type
+                    label.frame.origin.x = CGFloat(index * 110) + 10.0
+                    label.frame.origin.y = 10
+                    
+                    label.frame.size = CGSize(width: 100, height: 100)
                     label.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.8, alpha: 1.0)
                 }
             }
@@ -108,14 +118,52 @@ class QuestionViewController: UIViewController {
                 }
             }
             
+            if (item.state > 0){
+                view.isUserInteractionEnabled = false
+            }else{
+                view.isUserInteractionEnabled = true
+            }
+        
+            
         }else{
             titleLabel.text = ""
             descriptionLabel.text = ""
             //questionData.text = ""
         }
-      
+        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        print("Will Layout \(UIScreen.main.bounds)")
+        let size = UIScreen.main.bounds
+        if (size.width > size.height){
+            stackView.axis  = .horizontal
+        }else{
+            stackView.axis  = .vertical
+        }
+        
+    }
+    
+    
+    func updateSeconds(){
+        if let cell = cell {
+            cellItem = TableItemCollection.item(cell.position)
+            clockLabel.text = "⏱ \(cellItem!.seconds)"
+            if (cellItem!.state > 0){
+                return;
+            }
+            cellItem!.seconds += 1
+            TableItemCollection.update(position: cell.position, item: cellItem!)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+            if self.viewIfLoaded?.window != nil {
+                self.updateSeconds()
+            }
+       }
+        
     }
 
+    
     
 }
 
@@ -129,19 +177,21 @@ extension QuestionViewController : UIGestureRecognizerDelegate{
             view.press()
             view.backgroundColor = UIColor.yellow
             if (view.content == cellItem?.result){
-                cell!.cellItem?.state = 1
+                cellItem?.state = 1
             }else{
-                cell!.cellItem?.state = 2
+                cellItem?.state = 2
             }
-            cell?.backgroundColor = UIColor.lightGray
-            cell!.cellItem!.selectedItem = view.tag
-            //cell?.isUserInteractionEnabled = false
+            cellItem!.selectedItem = view.tag
+            updateView()
+            TableItemCollection.update(position: (cell?.position)! , item: cellItem!)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
                 self.back()
             }
         }
         return true
     }
+    
+    
     
     func back(){
         if let FirstViewController = self.navigationController?.viewControllers.first {

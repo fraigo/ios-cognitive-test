@@ -1,5 +1,77 @@
 [
     {
+        "title" : "Belongs to",
+        "description" : "What item does not belong?",
+        "type" : "mix",
+        "answer1" : "🐮",
+        "answer2" : "👶🏻",
+        "answer3" : "👱🏻‍♂️",
+        "answer4" : "👩🏼"
+    },
+    {
+        "title" : "Belongs to",
+        "description" : "What item does not belong?",
+        "type" : "mix",
+        "answer1" : "👱🏻‍♂️",
+        "answer2" : "🐮",
+        "answer3" : "🐷",
+        "answer4" : "🐴"
+    },
+    {
+        "title" : "Belongs to",
+        "description" : "What item does not belong?",
+        "type" : "mix",
+        "answer1" : "📦",
+        "answer2" : "👜",
+        "answer3" : "🎒",
+        "answer4" : "💼"
+    },
+    {
+        "title" : "Belongs to",
+        "description" : "What item does not belong?",
+        "type" : "mix",
+        "answer1" : "👟",
+        "answer2" : "👠",
+        "answer3" : "👡",
+        "answer4" : "👢"
+    },
+    {
+        "title" : "Belongs to",
+        "description" : "What item does not belong?",
+        "type" : "mix",
+        "answer1" : "🐠",
+        "answer2" : "🐘",
+        "answer3" : "🐂",
+        "answer4" : "🐏"
+    },
+    {
+        "title" : "Belongs to",
+        "description" : "What item does not belong?",
+        "type" : "mix",
+        "answer1" : "🐀",
+        "answer2" : "🦈",
+        "answer3" : "🐟",
+        "answer4" : "🐳"
+    },
+    {
+        "title" : "Belongs to",
+        "description" : "What item does not belong?",
+        "type" : "mix",
+        "answer1" : "🛵",
+        "answer2" : "🚜",
+        "answer3" : "🚕",
+        "answer4" : "🚌"
+    },
+    {
+        "title" : "Belongs to",
+        "description" : "What item does not belong?",
+        "type" : "mix",
+        "answer1" : "🚓",
+        "answer2" : "🛸",
+        "answer3" : "🛩",
+        "answer4" : "🚀"
+    },
+    {
         "title" : "Digit Sequence",
         "description" : "Find the next sequence",
         "type" : "digit",

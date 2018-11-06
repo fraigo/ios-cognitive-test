@@ -20,6 +20,9 @@
 		0BA0E465218950A30083FF70 /* ToDo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0BA0E464218950A30083FF70 /* ToDo.txt */; };
 		0BA0E467218952C10083FF70 /* CogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0E466218952C10083FF70 /* CogView.swift */; };
 		0BE99588218D535700D4059D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE99587218D535700D4059D /* Extensions.swift */; };
+		CE4A74002190CAA800ABB81E /* TableItemCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A73FF2190CAA800ABB81E /* TableItemCollection.swift */; };
+		CE4A74022190DD1600ABB81E /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A74012190DD1600ABB81E /* QuestionCollectionViewCell.swift */; };
+		CE5C394D21908FAD0062DBFB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C394C21908FAD0062DBFB /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		0BA0E464218950A30083FF70 /* ToDo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
 		0BA0E466218952C10083FF70 /* CogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogView.swift; sourceTree = "<group>"; };
 		0BE99587218D535700D4059D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CE4A73FF2190CAA800ABB81E /* TableItemCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableItemCollection.swift; sourceTree = "<group>"; };
+		CE4A74012190DD1600ABB81E /* QuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE5C394C21908FAD0062DBFB /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +87,12 @@
 				0B5726AB2188064D00845F0C /* Info.plist */,
 				0B5726A32188064800845F0C /* ios_cognitive_test.xcdatamodeld */,
 				0B5726B521880B2300845F0C /* TableItem.swift */,
+				CE4A73FF2190CAA800ABB81E /* TableItemCollection.swift */,
 				0B5726B721880C9F00845F0C /* questions.json */,
 				0BA0E466218952C10083FF70 /* CogView.swift */,
 				0BE99587218D535700D4059D /* Extensions.swift */,
+				CE5C394C21908FAD0062DBFB /* Utils.swift */,
+				CE4A74012190DD1600ABB81E /* QuestionCollectionViewCell.swift */,
 			);
 			path = "ios-cognitive-test";
 			sourceTree = "<group>";
@@ -162,9 +171,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B5726A52188064800845F0C /* ios_cognitive_test.xcdatamodeld in Sources */,
+				CE4A74022190DD1600ABB81E /* QuestionCollectionViewCell.swift in Sources */,
 				0B5726B621880B2300845F0C /* TableItem.swift in Sources */,
+				CE5C394D21908FAD0062DBFB /* Utils.swift in Sources */,
 				0BA0E467218952C10083FF70 /* CogView.swift in Sources */,
 				0BE99588218D535700D4059D /* Extensions.swift in Sources */,
+				CE4A74002190CAA800ABB81E /* TableItemCollection.swift in Sources */,
 				0B5726B2218807A400845F0C /* QuestionTableViewCell.swift in Sources */,
 				0B5726B421880A4000845F0C /* QuestionTableViewController.swift in Sources */,
 				0B57269F2188064800845F0C /* QuestionViewController.swift in Sources */,
@@ -315,7 +327,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8SUQQ8935B;
 				INFOPLIST_FILE = "ios-cognitive-test/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8SUQQ8935B;
 				INFOPLIST_FILE = "ios-cognitive-test/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
