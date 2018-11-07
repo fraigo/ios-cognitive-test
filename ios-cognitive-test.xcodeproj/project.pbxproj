@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B4F70462192A3DC003FD08D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4F70452192A3DC003FD08D /* ResultsViewController.swift */; };
 		0B57269D2188064800845F0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57269C2188064800845F0C /* AppDelegate.swift */; };
 		0B57269F2188064800845F0C /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57269E2188064800845F0C /* QuestionViewController.swift */; };
 		0B5726A22188064800845F0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5726A02188064800845F0C /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B4F70452192A3DC003FD08D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		0B5726992188064700845F0C /* ios-cognitive-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-cognitive-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B57269C2188064800845F0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B57269E2188064800845F0C /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -91,17 +93,18 @@
 				0B57269E2188064800845F0C /* QuestionViewController.swift */,
 				0B5726B1218807A400845F0C /* QuestionTableViewCell.swift */,
 				0B5726B321880A4000845F0C /* QuestionTableViewController.swift */,
-				0B5726A02188064800845F0C /* Main.storyboard */,
-				0B5726A62188064D00845F0C /* Assets.xcassets */,
-				0B5726A82188064D00845F0C /* LaunchScreen.storyboard */,
-				0B5726AB2188064D00845F0C /* Info.plist */,
-				0B5726A32188064800845F0C /* ios_cognitive_test.xcdatamodeld */,
+				CE4A74012190DD1600ABB81E /* QuestionCollectionViewCell.swift */,
+				0B4F70452192A3DC003FD08D /* ResultsViewController.swift */,
 				0B5726B521880B2300845F0C /* TableItem.swift */,
 				CE4A73FF2190CAA800ABB81E /* TableItemCollection.swift */,
 				0BA0E466218952C10083FF70 /* CogView.swift */,
 				0BE99587218D535700D4059D /* Extensions.swift */,
 				CE5C394C21908FAD0062DBFB /* Utils.swift */,
-				CE4A74012190DD1600ABB81E /* QuestionCollectionViewCell.swift */,
+				0B5726A02188064800845F0C /* Main.storyboard */,
+				0B5726A62188064D00845F0C /* Assets.xcassets */,
+				0B5726A82188064D00845F0C /* LaunchScreen.storyboard */,
+				0B5726AB2188064D00845F0C /* Info.plist */,
+				0B5726A32188064800845F0C /* ios_cognitive_test.xcdatamodeld */,
 				0B5726B721880C9F00845F0C /* questions.json */,
 				CE4A74352191356F00ABB81E /* questions1.json */,
 				CE4A74372191378800ABB81E /* questions2.json */,
@@ -201,6 +204,7 @@
 				0B5726B421880A4000845F0C /* QuestionTableViewController.swift in Sources */,
 				0B57269F2188064800845F0C /* QuestionViewController.swift in Sources */,
 				0B57269D2188064800845F0C /* AppDelegate.swift in Sources */,
+				0B4F70462192A3DC003FD08D /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +351,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8SUQQ8935B;
 				INFOPLIST_FILE = "ios-cognitive-test/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -355,7 +359,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "franciscoigor.ios-cognitive-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -366,7 +370,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8SUQQ8935B;
 				INFOPLIST_FILE = "ios-cognitive-test/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,7 +378,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "franciscoigor.ios-cognitive-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

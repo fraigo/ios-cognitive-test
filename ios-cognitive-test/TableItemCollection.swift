@@ -21,7 +21,7 @@ class TableItemCollection {
     static func appendItems(items : NSArray){
         tableData.removeAll()
         for item in items {
-            self.tableData.append(TableItem(item as! NSDictionary, pos: tableData.count+1))
+            self.tableData.append(TableItem(item as! NSDictionary, pos: tableData.count))
         }
         self.tableView?.reloadData()
     }
@@ -34,6 +34,10 @@ class TableItemCollection {
         tableData[position] = item
         tableView?.reloadData()
         
+    }
+    
+    static func items() -> [TableItem]{
+        return tableData
     }
     
     static func count() -> Int {

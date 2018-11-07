@@ -31,7 +31,7 @@ class QuestionTableViewCell: UITableViewCell {
         descriptionLabel.textColor = UIColor.black
         if (numberLabel != nil){
             let item = TableItemCollection.item(position)
-            numberLabel.text = "\(item.position)"
+            numberLabel.text = "\(item.position+1)"
             questionLabel.text = item.title
             descriptionLabel.text = item.description
             var status = "-"

@@ -28,13 +28,13 @@ class QuestionViewController: UIViewController {
     
     
     private var cellItem: TableItem?
-    private var cell: QuestionTableViewCell?
     private var tableView : UITableView?
     private var answer: String = ""
+    private var position : Int = -1
     
-    func setItem(_ cell : QuestionTableViewCell, table: UITableView ){
-        self.cell = cell
-        self.cellItem = TableItemCollection.item(cell.position)
+    func setItem(_ position: Int, table: UITableView ){
+        self.cellItem = TableItemCollection.item(position)
+        self.position = position
         self.tableView = table
         if ( titleLabel != nil){
             updateView();
@@ -94,7 +94,7 @@ class QuestionViewController: UIViewController {
             titleLabel.text = item.title
             descriptionLabel.text = item.description
             answer = item.result
-            numberLabel.text = "\(item.position)"
+            numberLabel.text = "\(item.position+1)"
             
             
             
@@ -156,14 +156,14 @@ class QuestionViewController: UIViewController {
     
     
     func updateSeconds(){
-        if let cell = cell {
-            cellItem = TableItemCollection.item(cell.position)
+        if (position >= 0) {
+            cellItem = TableItemCollection.item(position)
             clockLabel.text = "⏱ \(cellItem!.seconds)"
             if (cellItem!.state > 0){
                 return;
             }
             cellItem!.seconds += 1
-            TableItemCollection.update(position: cell.position, item: cellItem!)
+            TableItemCollection.update(position: position, item: cellItem!)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             if self.viewIfLoaded?.window != nil {
@@ -193,7 +193,7 @@ extension QuestionViewController : UIGestureRecognizerDelegate{
             }
             cellItem!.selectedItem = view.tag
             updateView()
-            TableItemCollection.update(position: (cell?.position)! , item: cellItem!)
+            TableItemCollection.update(position: position , item: cellItem!)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
                 self.next()
             }
@@ -215,17 +215,25 @@ extension QuestionViewController : UIGestureRecognizerDelegate{
             //self.navigationController?.popToViewController(FirstViewController, animated: false)
             //self.navigationController?.popViewController(animated: false)
         //}
-        let index = IndexPath(row: (cell?.position)!+1, section: 0)
-        print("Index \(index)")
-        if let viewCell = tableView?.cellForRow(at: index){
+        print("Index \(position+1)")
+        
+        if (position+1 < TableItemCollection.count()){
             let newView = storyboard!.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController
-            newView.setItem(viewCell as! QuestionTableViewCell, table: tableView!)
+            newView.setItem(position + 1, table: tableView!)
             self.navigationController?.pushViewController(newView, animated: true)
             if var viewControllers = navigationController?.viewControllers {
                 viewControllers.remove(at: viewControllers.count-2)
                 navigationController?.viewControllers = viewControllers
             }
+        }else{
+            //finished
+            ResultsViewController.show(current: self)
+            if var viewControllers = navigationController?.viewControllers {
+                viewControllers.remove(at: viewControllers.count-2)
+                navigationController?.viewControllers = viewControllers
+            }
         }
+    
     }
     
 }

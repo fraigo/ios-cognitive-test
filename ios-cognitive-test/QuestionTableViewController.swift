@@ -18,13 +18,27 @@ class QuestionTableViewController: UITableViewController {
         super.viewDidLoad()
         questionTableView.dataSource = self
         questionTableView.delegate = self
+        
+        navigationButtons()
+        
+        
+        splitViewController?.delegate = self
+        loadData()
+    }
+    
+    func navigationButtons(){
         let button = UIBarButtonItem()
         button.title = "New"
         button.target = self
         button.action = #selector(reloadQuestions)
         navigationItem.leftBarButtonItem = button
-        splitViewController?.delegate = self
-        loadData()
+        
+        let button2 = UIBarButtonItem()
+        button2.title = "Results"
+        button2.target = self
+        button2.action = #selector(viewResults)
+        button2.isEnabled = false
+        navigationItem.rightBarButtonItem = button2
     }
     
     func loadData(){
@@ -68,6 +82,11 @@ class QuestionTableViewController: UITableViewController {
     
     }
     
+    
+    @objc func viewResults(){
+        ResultsViewController.show(current : self)
+    }
+    
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         //questionTableView.setEditing(editing, animated: animated)
@@ -75,11 +94,11 @@ class QuestionTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let point = CGPoint(x: 0, y: 60.0 * CGFloat(currentPosition))
-        if (currentPosition>0){
-            questionTableView.setContentOffset(point, animated: true)
-        }
+        tableView.scrollTo(position: currentPosition)
+        navigationItem.rightBarButtonItem?.isEnabled = TableItemCollection.completed()
     }
+    
+    
     
     
     
@@ -90,7 +109,7 @@ class QuestionTableViewController: UITableViewController {
         let viewCell = sender as! QuestionTableViewCell
         currentPosition = viewCell.position
         let questionView = segue.destination as! QuestionViewController
-        questionView.setItem(viewCell, table: questionTableView)
+        questionView.setItem(viewCell.position, table: questionTableView)
     }
     
     
@@ -134,5 +153,31 @@ extension QuestionTableViewController : UISplitViewControllerDelegate {
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         return true
+    }
+}
+
+
+extension UITableView {
+    
+    
+    func scrollTo(position: Int){
+        let point = CGPoint(x: 0, y: 60.0 * CGFloat(position))
+        if (position>0){
+            self.setContentOffset(point, animated: true)
+        }
+    }
+}
+
+
+extension TableItemCollection {
+    
+    static func completed() -> Bool {
+        var completed = 0
+        for item in items(){
+            if (item.state>0){
+                completed += 1
+            }
+        }
+        return (completed == count())
     }
 }
