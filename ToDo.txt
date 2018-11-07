@@ -1,4 +1,8 @@
-** Avoid reload question data
-** Empty labels at beginning
-** Disable edit in navigation table
+*ok* Avoid reload question data
+*ok* Empty labels at beginning
+*ok* Disable edit in navigation table
+*ok* start in single view (initial table)
+*ok* next question on click
+
+
 

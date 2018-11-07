@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-cognitive-test/QuestionViewController.swift"
-            timestampString = "563169938.155917"
+            timestampString = "563175469.593387"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "gestureRecognizer(_:shouldReceive:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-cognitive-test/CogView.swift"
-            timestampString = "563169938.1560301"
+            timestampString = "563175469.59447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-cognitive-test/QuestionViewController.swift"
-            timestampString = "563169938.156132"
+            timestampString = "563175469.594546"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "updateView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-cognitive-test/QuestionViewController.swift"
-            timestampString = "563169938.156217"
+            timestampString = "563175469.595302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "gestureRecognizer(_:shouldReceive:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-cognitive-test/QuestionViewController.swift"
-            timestampString = "563169938.156345"
+            timestampString = "563175469.596262"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "updateView()"
             landmarkType = "7">
          </BreakpointContent>

@@ -9,25 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="1U5-hU-ryI">
-            <objects>
-                <viewController id="TcW-zL-YiD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QnN-SQ-Sfg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="E57-aX-wxs"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R5h-9z-jNI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="36" y="478"/>
-        </scene>
         <!--Question View Controller-->
         <scene sceneID="vnM-cr-1Ue">
             <objects>
-                <viewController id="h7e-Rg-fu2" customClass="QuestionViewController" customModule="ios_cognitive_test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionViewController" id="h7e-Rg-fu2" customClass="QuestionViewController" customModule="ios_cognitive_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O3E-RT-XXo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,6 +22,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZE-0C-dpt">
+                                <rect key="frame" x="10" y="98" width="50" height="33.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="YL4-NH-ZGM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4b-eY-aAA">
                                 <rect key="frame" x="0.0" y="132" width="375" height="20.333333333333343"/>
@@ -169,10 +165,12 @@
                         <constraints>
                             <constraint firstItem="Y4b-eY-aAA" firstAttribute="top" secondItem="SGl-tj-2m8" secondAttribute="bottom" constant="8" id="06N-lI-Yie"/>
                             <constraint firstItem="9Uj-L0-Uh0" firstAttribute="trailing" secondItem="Y4b-eY-aAA" secondAttribute="trailing" id="AM2-ef-u68"/>
+                            <constraint firstItem="EZE-0C-dpt" firstAttribute="leading" secondItem="9Uj-L0-Uh0" secondAttribute="leading" constant="10" id="BJc-C9-p8I"/>
                             <constraint firstItem="8z4-1L-ge3" firstAttribute="centerX" secondItem="O3E-RT-XXo" secondAttribute="centerX" id="CNS-Co-oEX"/>
                             <constraint firstItem="Y4b-eY-aAA" firstAttribute="leading" secondItem="9Uj-L0-Uh0" secondAttribute="leading" id="E1U-kh-DuT"/>
                             <constraint firstItem="9Uj-L0-Uh0" firstAttribute="trailing" secondItem="SGl-tj-2m8" secondAttribute="trailing" constant="10" id="Ge3-Ll-Pet"/>
                             <constraint firstItem="9Uj-L0-Uh0" firstAttribute="trailing" secondItem="uQY-6s-Cxy" secondAttribute="trailing" constant="10" id="Wys-oW-S6R"/>
+                            <constraint firstItem="EZE-0C-dpt" firstAttribute="top" secondItem="9Uj-L0-Uh0" secondAttribute="top" constant="10" id="eRN-uU-tQd"/>
                             <constraint firstItem="SGl-tj-2m8" firstAttribute="top" secondItem="9Uj-L0-Uh0" secondAttribute="top" id="hDO-cW-zQT"/>
                             <constraint firstItem="8z4-1L-ge3" firstAttribute="top" secondItem="Y4b-eY-aAA" secondAttribute="bottom" constant="20" id="nvk-mY-nmB"/>
                             <constraint firstItem="uQY-6s-Cxy" firstAttribute="top" secondItem="9Uj-L0-Uh0" secondAttribute="top" constant="10" id="p3u-m5-avB"/>
@@ -187,6 +185,7 @@
                         <outlet property="answerLabel4" destination="PdD-Hk-BsA" id="VYk-en-bPF"/>
                         <outlet property="clockLabel" destination="uQY-6s-Cxy" id="Id2-67-n9E"/>
                         <outlet property="descriptionLabel" destination="Y4b-eY-aAA" id="l4T-ap-3n5"/>
+                        <outlet property="numberLabel" destination="EZE-0C-dpt" id="szk-em-1Pg"/>
                         <outlet property="optionLabel1" destination="ezS-is-LfQ" id="n5F-nF-o12"/>
                         <outlet property="optionLabel2" destination="tYi-tt-kxN" id="7e6-l0-fny"/>
                         <outlet property="optionLabel3" destination="mEA-RB-ltY" id="u2v-Dn-Cbj"/>
@@ -271,7 +270,7 @@
                                     <outlet property="itemInfo" destination="Pxy-6K-LdM" id="hU7-UB-ydX"/>
                                     <outlet property="numberLabel" destination="m1w-zm-Tsd" id="U7e-3d-oO5"/>
                                     <outlet property="questionLabel" destination="RXb-r3-cK9" id="OaA-B1-4EQ"/>
-                                    <segue destination="h7e-Rg-fu2" kind="showDetail" id="Vr1-Ru-rNv"/>
+                                    <segue destination="h7e-Rg-fu2" kind="showDetail" identifier="" id="Vr1-Ru-rNv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -12,7 +12,7 @@ class QuestionTableViewController: UITableViewController {
     
     @IBOutlet weak var questionTableView: UITableView!
     
-    var currentPosition = -1
+    var currentPosition = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +21,9 @@ class QuestionTableViewController: UITableViewController {
         let button = UIBarButtonItem()
         button.title = "New"
         button.target = self
-        button.action = #selector(newTest)
+        button.action = #selector(reloadQuestions)
         navigationItem.leftBarButtonItem = button
-        
+        splitViewController?.delegate = self
         loadData()
     }
     
@@ -52,9 +52,20 @@ class QuestionTableViewController: UITableViewController {
         TableItemCollection.appendItems(items: questions)
     }
     
-    @objc func newTest(){
+    @objc func reloadQuestions(){
         
-        loadData()
+        let refreshAlert = UIAlertController(title: "Refresh all data", message: "All your answers will be lost.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            self.loadData()
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+    
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -64,7 +75,10 @@ class QuestionTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        let point = CGPoint(x: 0, y: 60.0 * CGFloat(currentPosition))
+        if (currentPosition>0){
+            questionTableView.setContentOffset(point, animated: true)
+        }
     }
     
     
@@ -74,6 +88,7 @@ class QuestionTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         let viewCell = sender as! QuestionTableViewCell
+        currentPosition = viewCell.position
         let questionView = segue.destination as! QuestionViewController
         questionView.setItem(viewCell, table: questionTableView)
     }
@@ -99,6 +114,7 @@ extension QuestionTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! QuestionTableViewCell
         cell.setItem(indexPath.row)
+        
         return cell
     }
     
@@ -113,3 +129,10 @@ extension QuestionTableViewController {
     
 }
 
+
+extension QuestionTableViewController : UISplitViewControllerDelegate {
+    
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
+    }
+}

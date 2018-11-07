@@ -24,6 +24,8 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var section2: UIView!
     @IBOutlet weak var clockLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var numberLabel: UILabel!
+    
     
     private var cellItem: TableItem?
     private var cell: QuestionTableViewCell?
@@ -92,6 +94,7 @@ class QuestionViewController: UIViewController {
             titleLabel.text = item.title
             descriptionLabel.text = item.description
             answer = item.result
+            numberLabel.text = "\(item.position)"
             
             
             
@@ -192,7 +195,7 @@ extension QuestionViewController : UIGestureRecognizerDelegate{
             updateView()
             TableItemCollection.update(position: (cell?.position)! , item: cellItem!)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
-                self.back()
+                self.next()
             }
         }
         return true
@@ -203,6 +206,25 @@ extension QuestionViewController : UIGestureRecognizerDelegate{
     func back(){
         if let FirstViewController = self.navigationController?.viewControllers.first {
             self.navigationController?.popToViewController(FirstViewController, animated: true)
+        }
+    }
+    
+    
+    func next(){
+        //if let FirstViewController = self.navigationController?.viewControllers.first {
+            //self.navigationController?.popToViewController(FirstViewController, animated: false)
+            //self.navigationController?.popViewController(animated: false)
+        //}
+        let index = IndexPath(row: (cell?.position)!+1, section: 0)
+        print("Index \(index)")
+        if let viewCell = tableView?.cellForRow(at: index){
+            let newView = storyboard!.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController
+            newView.setItem(viewCell as! QuestionTableViewCell, table: tableView!)
+            self.navigationController?.pushViewController(newView, animated: true)
+            if var viewControllers = navigationController?.viewControllers {
+                viewControllers.remove(at: viewControllers.count-2)
+                navigationController?.viewControllers = viewControllers
+            }
         }
     }
     
