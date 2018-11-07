@@ -72,6 +72,7 @@ class QuestionTableViewController: UITableViewController {
         
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
             self.loadData()
+            self.updateView()
         }))
         
         refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -94,11 +95,13 @@ class QuestionTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        updateView()
+    }
+    
+    func updateView(){
         tableView.scrollTo(position: currentPosition)
         navigationItem.rightBarButtonItem?.isEnabled = TableItemCollection.completed()
     }
-    
-    
     
     
     

@@ -26,6 +26,7 @@ struct TableItem {
     var state : Int
     var selectedItem : Int
     var seconds: Int
+    var points: Int
     
     init(_ item: NSDictionary, pos: Int) {
         title = item.value(forKey: "title") as! String
@@ -47,6 +48,7 @@ struct TableItem {
         answer2 = answers[1] as! String
         answer3 = answers[2] as! String
         answer4 = answers[3] as! String
+        points = item.safeValue(forKey: "points") as! Int
         
         type = item.value(forKey: "type") as! String
         position = pos

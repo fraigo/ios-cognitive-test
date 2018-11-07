@@ -10,7 +10,8 @@
         "answer1" : "182,192",
         "answer2" : "172,182",
         "answer3" : "163,173",
-        "answer4" : "182,172"
+ "answer4" : "182,172",
+ "points"  : 10
     },
     {
         "title" : "Triple Sequence",
@@ -23,7 +24,8 @@
         "answer1" : "456,456,456",
         "answer2" : "123,234,345",
         "answer3" : "567,567,567",
-        "answer4" : "234,234,234"
+ "answer4" : "234,234,234",
+ "points"  : 12
     },
     {
         "title" : "Triple Sequence",
@@ -36,7 +38,8 @@
         "answer1" : "456,567,678",
         "answer2" : "456,678,789",
         "answer3" : "123,234,345",
-        "answer4" : "123,456,789"
+ "answer4" : "123,456,789",
+ "points"  : 12
  
     }
 ]

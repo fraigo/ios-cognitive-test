@@ -10,7 +10,8 @@
         "answer1" : "08",
         "answer2" : "26",
         "answer3" : "71",
-        "answer4" : "89"
+ "answer4" : "89",
+ "points"  : 8
     },
     {
         "title" : "Number Sequence",
@@ -23,7 +24,8 @@
         "answer1" : "84",
         "answer2" : "74",
         "answer3" : "73",
-        "answer4" : "83"
+ "answer4" : "83",
+ "points"  : 8
     },
     {
         "title" : "Number Sequence",
@@ -36,6 +38,7 @@
         "answer1" : "456",
         "answer2" : "123",
         "answer3" : "567",
-        "answer4" : "234"
+ "answer4" : "234",
+ "points"  : 8
     }
 ]

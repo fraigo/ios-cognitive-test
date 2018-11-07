@@ -10,7 +10,8 @@
         "answer1" : "1230",
         "answer2" : "0123",
         "answer3" : "1203",
-        "answer4" : "3210"
+ "answer4" : "3210",
+ "points"  : 15
     },
     {
         "title" : "Arrow Sequence",
@@ -23,7 +24,8 @@
         "answer1" : "2121",
         "answer2" : "2211",
         "answer3" : "1122",
-        "answer4" : "2112"
+ "answer4" : "2112",
+ "points"  : 15
     },
     {
         "title" : "Arrow Sequence",
@@ -36,7 +38,8 @@
         "answer1" : "2000",
         "answer2" : "2020",
         "answer3" : "0002",
-        "answer4" : "3000"
+ "answer4" : "3000",
+ "points"  : 15
     },
     {
         "title" : "Fruit Sequence",
@@ -49,7 +52,8 @@
         "answer1" : "4123",
         "answer2" : "1234",
         "answer3" : "4321",
-        "answer4" : "4312"
+ "answer4" : "4312",
+ "points"  : 15
     }
     ,{
         "title" : "Vegetable Sequence",
@@ -62,7 +66,8 @@
         "answer1" : "4123",
         "answer2" : "1234",
         "answer3" : "4321",
-        "answer4" : "4312"
+ "answer4" : "4312",
+ "points"  : 15
     },{
         "title" : "Flag Sequence",
         "description" : "Find the next sequence",
@@ -74,7 +79,8 @@
         "answer1" : "4123",
         "answer2" : "1234",
         "answer3" : "4321",
-        "answer4" : "4312"
+ "answer4" : "4312",
+ "points"  : 15
     }
     
 ]

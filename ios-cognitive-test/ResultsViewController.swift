@@ -13,6 +13,7 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var totalTimeLabel: UILabel!
     @IBOutlet weak var bestTimeLabel: UILabel!
     @IBOutlet weak var worstTimeLabel: UILabel!
+    @IBOutlet weak var correctAnswersLabel: UILabel!
     @IBOutlet weak var totalPointsLabel: UILabel!
     
     override func viewDidLoad() {
@@ -21,6 +22,7 @@ class ResultsViewController: UIViewController {
         var bestTime = 1000
         var worstTime = 0
         var totalPoints = 0
+        var totalOk = 0
 
         // Do any additional setup after loading the view.
         for item in TableItemCollection.items(){
@@ -28,7 +30,22 @@ class ResultsViewController: UIViewController {
             bestTime = min(bestTime, item.seconds)
             worstTime = max(worstTime, item.seconds)
             if (item.state == 1){
-                totalPoints += 1
+                totalOk += 1
+                var questionPoints = item.points
+                
+                if (item.seconds>5){
+                    questionPoints -= 1
+                }
+                if (item.seconds>10){
+                    questionPoints -= 3
+                }
+                if (item.seconds>20){
+                    questionPoints -= 3
+                }
+                if (item.seconds>30 || questionPoints < 0){
+                    questionPoints = 0
+                }
+                totalPoints += questionPoints
             }
             
         }
@@ -37,7 +54,9 @@ class ResultsViewController: UIViewController {
         bestTimeLabel.text = "\(bestTime) seconds"
         worstTimeLabel.text = "\(worstTime) seconds"
         
+        correctAnswersLabel.text = "\(totalOk) answers"
         totalPointsLabel.text = "\(totalPoints) points"
+        
         
     }
 
