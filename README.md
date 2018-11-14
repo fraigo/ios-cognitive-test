@@ -16,6 +16,13 @@ Cognitive test application for iOS
 ![](screenshots/ios-cognitive-test-03.png)
 ![](screenshots/ios-cognitive-test-04.png)
 
+## Components used
 
+* Use of `UISplitViewController` to manage Navigation and a Split view between Questions and content
+* Use of `UITableView` for the main Question list
+* Using a custom `UIView` (`CogView`) to display question content
+* Using `UINavigationItem` to display navigation buttons (New, Results, Hint)
+* Using `UIAlertController` to display messages, confirmations and hints
+* Using `UINavigationController` to control custom navigation between views.
 
 
