@@ -4,7 +4,7 @@ Cognitive test application for iOS
 
 ## Features
 
-* Shows a list of questions over different topics (association, sequences, mathematical, logical)
+* Display a list of questions over different topics (association, sequences, mathematical, logical)
 * Choose the right answer until finished the challenge
 * Optionally, you can get a *Hint* about the current question
 * Get a final report about your performance
