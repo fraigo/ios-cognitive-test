@@ -18,6 +18,7 @@
 		0B5726B421880A4000845F0C /* QuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5726B321880A4000845F0C /* QuestionTableViewController.swift */; };
 		0B5726B621880B2300845F0C /* TableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5726B521880B2300845F0C /* TableItem.swift */; };
 		0B5726B821880C9F00845F0C /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B5726B721880C9F00845F0C /* questions.json */; };
+		0B931566219BD921003D6263 /* cognitive83.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B931565219BD921003D6263 /* cognitive83.jpg */; };
 		0BA0E465218950A30083FF70 /* ToDo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0BA0E464218950A30083FF70 /* ToDo.txt */; };
 		0BA0E467218952C10083FF70 /* CogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0E466218952C10083FF70 /* CogView.swift */; };
 		0BE99588218D535700D4059D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE99587218D535700D4059D /* Extensions.swift */; };
@@ -45,6 +46,7 @@
 		0B5726B321880A4000845F0C /* QuestionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewController.swift; sourceTree = "<group>"; };
 		0B5726B521880B2300845F0C /* TableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableItem.swift; sourceTree = "<group>"; };
 		0B5726B721880C9F00845F0C /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
+		0B931565219BD921003D6263 /* cognitive83.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cognitive83.jpg; sourceTree = "<group>"; };
 		0BA0E464218950A30083FF70 /* ToDo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
 		0BA0E466218952C10083FF70 /* CogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogView.swift; sourceTree = "<group>"; };
 		0BE99587218D535700D4059D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		0B57269B2188064700845F0C /* ios-cognitive-test */ = {
 			isa = PBXGroup;
 			children = (
+				0B931565219BD921003D6263 /* cognitive83.jpg */,
 				0B57269C2188064800845F0C /* AppDelegate.swift */,
 				0B57269E2188064800845F0C /* QuestionViewController.swift */,
 				0B5726B1218807A400845F0C /* QuestionTableViewCell.swift */,
@@ -182,6 +185,7 @@
 				CE4A743E2191389E00ABB81E /* questions4.json in Resources */,
 				CE4A743A219137BB00ABB81E /* questions3.json in Resources */,
 				0B5726A22188064800845F0C /* Main.storyboard in Resources */,
+				0B931566219BD921003D6263 /* cognitive83.jpg in Resources */,
 				CE4A74382191378800ABB81E /* questions2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
