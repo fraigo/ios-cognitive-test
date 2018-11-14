@@ -11,6 +11,7 @@
         "answer2" : "0123",
         "answer3" : "1203",
  "answer4" : "3210",
+ "tip" : "Nort East South West",
  "points"  : 15
     },
     {
@@ -25,6 +26,7 @@
         "answer2" : "2211",
         "answer3" : "1122",
  "answer4" : "2112",
+ "tip" : "Repeated pattern",
  "points"  : 15
     },
     {
@@ -39,6 +41,7 @@
         "answer2" : "2020",
         "answer3" : "0002",
  "answer4" : "3000",
+ "tip" : "Moving high",
  "points"  : 15
     },
     {
@@ -53,6 +56,7 @@
         "answer2" : "1234",
         "answer3" : "4321",
  "answer4" : "4312",
+ "tip" : "Circulation",
  "points"  : 15
     }
     ,{
@@ -67,11 +71,12 @@
         "answer2" : "1234",
         "answer3" : "4321",
  "answer4" : "4312",
+  "tip" : "Circulation",
  "points"  : 15
     },{
         "title" : "Flag Sequence",
         "description" : "Find the next sequence",
-        "type" : "flags",
+        "type" : "flags1",
         "option1" : "1234",
         "option2" : "2341",
         "option3" : "3412",
@@ -80,6 +85,7 @@
         "answer2" : "1234",
         "answer3" : "4321",
  "answer4" : "4312",
+ "tip" : "Circulation",
  "points"  : 15
     }
     

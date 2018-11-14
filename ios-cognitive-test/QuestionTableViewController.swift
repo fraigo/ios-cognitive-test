@@ -60,7 +60,7 @@ class QuestionTableViewController: UITableViewController {
         ]
         for file in files {
             let q1 = getJsonFromFile(name: file).shuffleData();
-            let count = (Double(q1.count) / 2.0) + 1
+            let count = (Double(q1.count) / 2.0) 
             questions.addObjects(from: q1.subarray(with: NSRange(location: 0, length: Int(count)  )))
         }
         TableItemCollection.appendItems(items: questions)

@@ -38,11 +38,40 @@ class QuestionViewController: UIViewController {
         self.tableView = table
         if ( titleLabel != nil){
             updateView();
+            navigationItem.rightBarButtonItem?.isEnabled = (cellItem?.tip != "")
         }
+    }
+    
+    func navigationButtons(){
+    
+        let button2 = UIBarButtonItem()
+        button2.title = "Hint"
+        button2.target = self
+        button2.action = #selector(showHint)
+        button2.isEnabled = true
+        navigationItem.rightBarButtonItem = button2
+    }
+    
+    @objc func showHint(){
+        let alert = UIAlertController(
+            title: "A Helpful Hint",
+            message: self.cellItem?.tip,
+            preferredStyle: UIAlertControllerStyle.actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            
+        }))
+        
+        present(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let button = UIBarButtonItem()
+        button.title = "Hint"
+        
+        navigationButtons()
+        
         updateView()
         addGesture(answerLabel1)
         addGesture(answerLabel2)

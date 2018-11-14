@@ -16,22 +16,24 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var correctAnswersLabel: UILabel!
     @IBOutlet weak var totalPointsLabel: UILabel!
     
+    var totalTime = 0.0
+    var bestTime = 1000.0
+    var worstTime = 0.0
+    var totalPoints = 0.0
+    var totalOk = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        var totalTime = 0
-        var bestTime = 1000
-        var worstTime = 0
-        var totalPoints = 0
-        var totalOk = 0
+        
 
         // Do any additional setup after loading the view.
         for item in TableItemCollection.items(){
-            totalTime += item.seconds
-            bestTime = min(bestTime, item.seconds)
-            worstTime = max(worstTime, item.seconds)
+            totalTime += Double(item.seconds)
+            bestTime = min(bestTime, Double(item.seconds))
+            worstTime = max(worstTime, Double(item.seconds))
             if (item.state == 1){
                 totalOk += 1
-                var questionPoints = item.points
+                var questionPoints = Double(item.points)
                 
                 if (item.seconds>5){
                     questionPoints -= 1
@@ -49,15 +51,25 @@ class ResultsViewController: UIViewController {
             }
             
         }
+        animateResults(step: 0.0)
         
-        totalTimeLabel.text = "\(totalTime) seconds"
-        bestTimeLabel.text = "\(bestTime) seconds"
-        worstTimeLabel.text = "\(worstTime) seconds"
+    
         
-        correctAnswersLabel.text = "\(totalOk) answers"
-        totalPointsLabel.text = "\(totalPoints) points"
+    }
+    
+    func animateResults(step: Double){
+        totalTimeLabel.text = "\(Int(totalTime * step)) seconds"
+        bestTimeLabel.text = "\(Int(bestTime * step)) seconds"
+        worstTimeLabel.text = "\(Int(worstTime * step)) seconds"
         
-        
+        correctAnswersLabel.text = "\(Int(totalOk * step)) answers"
+        totalPointsLabel.text = "\(Int(totalPoints * step)) points"
+        if (step>=1.0){
+            return
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.animateResults(step: step + 0.1 )
+        }
     }
 
     override func didReceiveMemoryWarning() {

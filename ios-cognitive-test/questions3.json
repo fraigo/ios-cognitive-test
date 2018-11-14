@@ -11,6 +11,7 @@
         "answer2" : "26",
         "answer3" : "71",
  "answer4" : "89",
+  "tip" : "Going down and up",
  "points"  : 8
     },
     {
@@ -25,6 +26,7 @@
         "answer2" : "74",
         "answer3" : "73",
  "answer4" : "83",
+  "tip" : "Going 2x1",
  "points"  : 8
     },
     {
@@ -39,6 +41,7 @@
         "answer2" : "123",
         "answer3" : "567",
  "answer4" : "234",
+ "tip" : "Next with three",
  "points"  : 8
     }
 ]
